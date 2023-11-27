@@ -9,6 +9,6 @@ class Pages {
   static Map<String, Widget Function(BuildContext)> mapPages = {
     Routes.splash: (context) => const SplashScreen(),
     Routes.startView: (context) => const StartView(),
-    Routes.home: (context) => const HomeView(),
+    Routes.home: (context) =>  HomeView(),
   };
 }

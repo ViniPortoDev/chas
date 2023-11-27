@@ -1,103 +1,111 @@
+import 'package:chas/src/view_models/view_model.dart';
+import 'package:chas/src/views/home/widgets/tea_box_category_widget.dart';
+import 'package:chas/src/views/home/widgets/tea_box_widget.dart';
+import 'package:chas/src/views/home/widgets/tea_userbar_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../routes/routes.dart';
+import 'widgets/tea_search_bar_widget.dart';
+
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  final viewModel = ViewModel();
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
-      backgroundColor: const Color(0xffF5F5F5),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              opacity: 0.08,
-              image: AssetImage('assets/images/background.jpg'),
-              fit: BoxFit.cover),
-        ),
+      backgroundColor: const Color(0xffececdc),
+      body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    color: Color(0xff8BC34A),
-                  ),
-                ),
-                const SizedBox(),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                // border: Border.all(),
-                borderRadius: BorderRadius.circular(18),
-              ),
-              height: 200,
-              child: SizedBox(
-                child: Image.asset('assets/images/cha-verde-1.jpg'),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Chá Verde',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-                color: Color(0xff666666),
-              ),
-            ),
-            const Text(
-              'Medicinal',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Color(0xff333333),
-              ),
-            ),
-            const SizedBox(height: 20),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
-              child: Text(
-                'Usado para Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper ex turpis, at porta ex condimentum non. Nullam nec lacus eget justo iaculis venenatis sollicitudin ut nunc.',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Color(0xff333333),
-                ),
+              padding: EdgeInsets.only(
+                top: 12,
+                left: 12,
+                right: 12,
+              ),
+              child: Column(
+                children: [
+                  TeaUserbarWidget(
+                    userName: 'Vinicius',
+                  ),
+                  SizedBox(height: 20),
+                  TeaSearchBarWidget(),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Categorias',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(
+                        'Ver tudo',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                ],
               ),
             ),
-            const SizedBox(height: 20),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                width: 260,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14.0),
-                  gradient: const LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topRight,
-                    colors: [
-                      Color(0xFF8BC34A),
-                      Color(0xFF33691E)
-                    ], // Gradiente de cores
-                  ),
-                ),
-                child: Center(
-                  child: const Text(
-                    'Como Preparar',
+            SizedBox(
+              height: 120,
+              child: ListView.separated(
+                itemCount: viewModel.teas.length,
+                padding: const EdgeInsets.only(left: 12),
+                separatorBuilder: (BuildContext context, int index) =>
+                    const SizedBox(width: 20),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return TeaBoxCategoryWidget(
+                    teaPhoto: viewModel.teas[index].teaImage,
+                    teaTitle: viewModel.teas[index].teaTitle,
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Medicinais',
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                ),
+                  const SizedBox(height: 12),
+                  // Column(
+                  //   children: List.generate(
+                  //     3,
+                  //     (index) => const TeaBoxWidget(),
+                  //   ),
+                  // )
+                  ListView.separated(
+                    shrinkWrap: true,
+                    itemCount: 3,
+                    separatorBuilder: (BuildContext context, int index) =>
+                        const SizedBox(height: 12),
+                    itemBuilder: (BuildContext context, int index) =>
+                        TeaBoxWidget(
+                      onTap: () => Navigator.pushNamed(context, Routes.home),
+                    ),
+                  ),
+                ],
               ),
-            )
+            ),
           ],
         ),
       ),
