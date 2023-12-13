@@ -1,4 +1,5 @@
-import 'package:chas/src/view_models/view_model.dart';
+import 'package:chas/src/repositories/teas_repository.dart';
+import 'package:chas/src/view_models/teas_view_model.dart';
 import 'package:chas/src/views/home/widgets/tea_box_category_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_box_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_userbar_widget.dart';
@@ -8,12 +9,12 @@ import '../../routes/routes.dart';
 import 'widgets/tea_search_bar_widget.dart';
 
 class HomeView extends StatelessWidget {
-  final viewModel = ViewModel();
+  final viewModel = TeasViewModel(repository: TeasRepository());
   HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: const Color(0xffececdc),
@@ -100,7 +101,7 @@ class HomeView extends StatelessWidget {
                         const SizedBox(height: 12),
                     itemBuilder: (BuildContext context, int index) =>
                         TeaBoxWidget(
-                      onTap: () => Navigator.pushNamed(context, Routes.home),
+                      onTap: () => Navigator.pushNamed(context, Routes.infoTea),
                     ),
                   ),
                 ],
