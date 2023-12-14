@@ -5,11 +5,12 @@
         "title" : "Erva Cidreira",
         "category": "Chá de Ervas",
         "description": "O chá de cidreira, também conhecido como melissa, é feito a partir das folhas da planta Melissa officinalis. É apreciado por seu sabor suave e propriedades calmantes, sendo usado tradicionalmente para relaxamento e alívio do estresse.",
-        "imagem": "url_da_imagem_do_chá_de_cidreira",
+        "image_url": "url_da_image_url_do_chá_de_cidreira",
         "preparation_time": "5-10 minutos",
         "likes": 156,
         "comments" : [
             {
+                "user_id" : 0,
                 "username" : "Antonio",
                 "comment" : "Muito bom recomendo"        
         }
@@ -21,11 +22,12 @@
         "title" : "Chá Verde",
         "category" : "Verdes",
         "description" : ". É conhecido por seu sabor fresco e suave, além de ser associado a uma série de benefícios à saúde, como melhorias no metabolismo, auxílio na perda de peso, propriedades antioxidantes e potencial para promover a saúde cardiovascular e cerebral. É uma bebida apreciada em diversas culturas e valorizada por suas propriedades refrescantes e revigorantes.",
-        "image" : "",
+        "image_url" : "image_url",
         "preparation_time" : "2-3 minutos",
         "likes" : 12,
         "comments" : [
             {
+                "user_id" : 1,                
                 "username" : "Antonio",
                 "comment" : "Muito bom recomendo"        
         }
@@ -36,11 +38,12 @@
         "title" : "Chá de Boldo",
         "category": "Chá de Ervas",
         "description": "O chá de boldo é feito a partir das folhas da planta Peumus boldus e é conhecido por suas propriedades digestivas e hepatoprotetoras.",
-        "imagem": "url_da_imagem_do_chá_de_boldo",
+        "image_url": "url_da_image_url_do_chá_de_boldo",
         "preparation_time": "5-10 minutos",
         "likes": 127, 
         "comments" : [
             {
+                "user_id" : 2,                    
                 "username" : "Antonio",
                 "comment" : "Muito bom recomendo"        
         }
@@ -51,11 +54,12 @@
         "title" : "Chá de Capim-limão",
         "category": "Chá de Ervas",
         "description": "O chá de capim-limão, também conhecido como chá de erva-cidreira, é feito a partir das folhas da planta Cymbopogon citratus. É apreciado por seu sabor cítrico e propriedades calmantes.",
-        "imagem": "url_da_imagem_do_chá_de_capim_limão",
+        "image_url": "url_da_image_url_do_chá_de_capim_limão",
         "preparation_time": "5-7 minutos",
         "likes": 184,
         "comments" : [
-            {
+            {   
+                "user_id" : 3,                
                 "username" : "Antonio",
                 "comment" : "Muito bom recomendo"        
         }

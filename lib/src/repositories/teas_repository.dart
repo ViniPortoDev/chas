@@ -9,10 +9,13 @@ class TeasRepository implements ITeasRepository {
   @override
   Future<List<TeaModel>> getTeaList() async {
     String teaListJson = await rootBundle.loadString('lib/src/mock/teas.json');
-//  final zap = where
-    // final teaMap = jsonDecode(teaListJson);
-    // teaList.add(TeaModel.fromMap(teaMap['teas']));
-    print(teaList);
+    final Map<String, dynamic> teaMap = jsonDecode(teaListJson);
+
+    for (var res in teaMap['teas']) {
+      final tea = TeaModel.fromMap(res);
+      teaList.add(tea);
+    }
+
     return teaList;
   }
 }
