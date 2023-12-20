@@ -1,3 +1,6 @@
+import 'package:chas/src/blocs/teas_bloc.dart';
+import 'package:chas/src/blocs/teas_event.dart';
+import 'package:chas/src/blocs/teas_states.dart';
 import 'package:chas/src/models/tea_model.dart';
 import 'package:chas/src/repositories/teas_local_repository.dart';
 import 'package:chas/src/controller/teas_controller.dart';
@@ -17,17 +20,19 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  late final ValueNotifier<List<TeaModel>> teaList;
+  late final TeasBloc bloc;
 
   @override
   void initState() {
     super.initState();
-    getAllTeas();
+    bloc = TeasBloc();
+    bloc.inputTeas.add(LoadTeasEvent());
   }
 
-  Future<List<TeaModel>> getAllTeas() async {
-    teaList.value = await controller.getTeaList();
-    return teaList.value;
+  @override
+  void dispose() {
+    bloc.inputTeas.close();
+    super.dispose();
   }
 
   final controller = TeasController(repository: TeasLocalRepository());
@@ -106,27 +111,24 @@ class _HomeViewState extends State<HomeView> {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  ValueListenableBuilder(
-                    valueListenable: teaList,
-                    builder: (context, teaList, child) {
-                      if (teaList == null) {
-                        return const Center(child: CircularProgressIndicator());
-                      }
-                      return ListView.separated(
-                        shrinkWrap: true,
-                        itemCount: teaList.length,
-                        separatorBuilder: (BuildContext context, int index) =>
-                            const SizedBox(height: 12),
-                        itemBuilder: (BuildContext context, int index) =>
-                            TeaBoxWidget(
-                          description: teaList[index].description,
-                          teaImage: teaList[index].imagemUrl,
-                          onTap: () =>
-                              Navigator.pushNamed(context, Routes.infoTea),
-                        ),
-                      );
-                    },
-                  ),
+                  StreamBuilder<TeasStates>(
+                      stream: bloc.stream,
+                      builder: (context, snapshot) {
+                        final teaList = snapshot.data?.teaList ?? [];
+                        return ListView.separated(
+                          shrinkWrap: true,
+                          itemCount: teaList.length,
+                          separatorBuilder: (BuildContext context, int index) =>
+                              const SizedBox(height: 12),
+                          itemBuilder: (BuildContext context, int index) =>
+                              TeaBoxWidget(
+                            description: teaList[index].description,
+                            teaImage: teaList[index].imagemUrl,
+                            onTap: () =>
+                                Navigator.pushNamed(context, Routes.infoTea),
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),
