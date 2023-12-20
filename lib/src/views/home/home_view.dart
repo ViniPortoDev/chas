@@ -1,5 +1,6 @@
-import 'package:chas/src/repositories/teas_repository.dart';
-import 'package:chas/src/view_models/teas_view_model.dart';
+import 'package:chas/src/models/tea_model.dart';
+import 'package:chas/src/repositories/teas_local_repository.dart';
+import 'package:chas/src/controller/teas_controller.dart';
 import 'package:chas/src/views/home/widgets/tea_box_category_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_box_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_userbar_widget.dart';
@@ -8,14 +9,31 @@ import 'package:flutter/material.dart';
 import '../../routes/routes.dart';
 import 'widgets/tea_search_bar_widget.dart';
 
-class HomeView extends StatelessWidget {
-  final viewModel = TeasViewModel(repository: TeasRepository());
-  HomeView({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  late final ValueNotifier<List<TeaModel>> teaList;
+
+  @override
+  void initState() {
+    super.initState();
+    getAllTeas();
+  }
+
+  Future<List<TeaModel>> getAllTeas() async {
+    teaList.value = await controller.getTeaList();
+    return teaList.value;
+  }
+
+  final controller = TeasController(repository: TeasLocalRepository());
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: const Color(0xffececdc),
       body: SingleChildScrollView(
@@ -62,15 +80,15 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 120,
               child: ListView.separated(
-                itemCount: viewModel.teas.length,
+                itemCount: 10,
                 padding: const EdgeInsets.only(left: 12),
                 separatorBuilder: (BuildContext context, int index) =>
                     const SizedBox(width: 20),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return TeaBoxCategoryWidget(
-                    teaPhoto: viewModel.teas[index].teaImage,
-                    teaTitle: viewModel.teas[index].teaTitle,
+                  return const TeaBoxCategoryWidget(
+                    teaPhoto: 'assets/images/cha_2.jpg',
+                    teaTitle: 'Farm',
                   );
                 },
               ),
@@ -88,21 +106,26 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  // Column(
-                  //   children: List.generate(
-                  //     3,
-                  //     (index) => const TeaBoxWidget(),
-                  //   ),
-                  // )
-                  ListView.separated(
-                    shrinkWrap: true,
-                    itemCount: 3,
-                    separatorBuilder: (BuildContext context, int index) =>
-                        const SizedBox(height: 12),
-                    itemBuilder: (BuildContext context, int index) =>
-                        TeaBoxWidget(
-                      onTap: () => Navigator.pushNamed(context, Routes.infoTea),
-                    ),
+                  ValueListenableBuilder(
+                    valueListenable: teaList,
+                    builder: (context, teaList, child) {
+                      if (teaList == null) {
+                        return const Center(child: CircularProgressIndicator());
+                      }
+                      return ListView.separated(
+                        shrinkWrap: true,
+                        itemCount: teaList.length,
+                        separatorBuilder: (BuildContext context, int index) =>
+                            const SizedBox(height: 12),
+                        itemBuilder: (BuildContext context, int index) =>
+                            TeaBoxWidget(
+                          description: teaList[index].description,
+                          teaImage: teaList[index].imagemUrl,
+                          onTap: () =>
+                              Navigator.pushNamed(context, Routes.infoTea),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

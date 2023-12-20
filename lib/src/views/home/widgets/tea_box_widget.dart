@@ -2,8 +2,16 @@ import 'package:chas/src/utils/hex_colors.dart';
 import 'package:flutter/material.dart';
 
 class TeaBoxWidget extends StatelessWidget {
+  final String description;
+  final String teaImage;
+
   final void Function()? onTap;
-  const TeaBoxWidget({super.key, this.onTap});
+  const TeaBoxWidget({
+    super.key,
+    required this.description,
+    required this.teaImage,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +46,11 @@ class TeaBoxWidget extends StatelessWidget {
                 SizedBox(
                   height: 90,
                   width: size.width * 0.35,
-                  child: const Text(
+                  child:  Text(
                     maxLines: 5,
                     overflow: TextOverflow.ellipsis,
-                    'Aenean lacinia eu mauris nonullam corper. Aenean lacinia eu mauris non ullamcorper. ',
-                    style: TextStyle(
+                    description,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 12,
                       color: HexColors.white,
@@ -85,7 +93,7 @@ class TeaBoxWidget extends StatelessWidget {
                 ],
               ),
               child: Image.asset(
-                'assets/images/cha_verde.jpg',
+                teaImage,
                 fit: BoxFit.cover,
               ),
             ),

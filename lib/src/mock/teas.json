@@ -1,72 +1,258 @@
 {
- "teas" : [
-    {
-        "id": 0,
-        "title" : "Erva Cidreira",
-        "category": "Chá de Ervas",
-        "description": "O chá de cidreira, também conhecido como melissa, é feito a partir das folhas da planta Melissa officinalis. É apreciado por seu sabor suave e propriedades calmantes, sendo usado tradicionalmente para relaxamento e alívio do estresse.",
-        "image_url": "url_da_image_url_do_chá_de_cidreira",
-        "preparation_time": "5-10 minutos",
-        "likes": 156,
-        "comments" : [
-            {
-                "user_id" : 0,
-                "username" : "Antonio",
-                "comment" : "Muito bom recomendo"        
+    "teas" : [
+        {
+            "id": 1,
+            "title" : "Erva Cidreira",
+            "category": "Chá de Ervas",
+            "description": "O chá de cidreira, também conhecido como melissa, é feito a partir das folhas da planta Melissa officinalis. É apreciado por seu sabor suave e propriedades calmantes, sendo usado tradicionalmente para relaxamento e alívio do estresse.",
+            "image_url": "url_da_image_url_do_chá_de_cidreira",
+            "preparation_time": "5-10 minutos",
+            "likes": 156,
+            "type": ["emagrecedor", "relaxamento", "digestão", "alívios"]
+
+        },
+        {
+            "id" : 2,
+            "title" : "Chá Verde",
+            "category" : "Verdes",
+            "description" : ". É conhecido por seu sabor fresco e suave, além de ser associado a uma série de benefícios à saúde, como melhorias no metabolismo, auxílio na perda de peso, propriedades antioxidantes e potencial para promover a saúde cardiovascular e cerebral. É uma bebida apreciada em diversas culturas e valorizada por suas propriedades refrescantes e revigorantes.",
+            "image_url" : "image_url",
+            "preparation_time" : "2-3 minutos",
+            "likes" : 12,
+            "type": ["digestão", "alívios"]
+       
+        },
+        {
+            "id": 3,
+            "title" : "Chá de Boldo",
+            "category": "Chá de Ervas",
+            "description": "O chá de boldo é feito a partir das folhas da planta Peumus boldus e é conhecido por suas propriedades digestivas e hepatoprotetoras.",
+            "image_url": "url_da_image_url_do_chá_de_boldo",
+            "preparation_time": "5-10 minutos",
+            "likes": 127, 
+            "type": ["emagrecedor"]
+
+        },
+        {
+            "id": 4,
+            "title" : "Chá de Capim-limão",
+            "category": "Chá de Ervas",
+            "description": "O chá de capim-limão, também conhecido como chá de erva-cidreira, é feito a partir das folhas da planta Cymbopogon citratus. É apreciado por seu sabor cítrico e propriedades calmantes.",
+            "image_url": "url_da_image_url_do_chá_de_capim_limão",
+            "preparation_time": "5-7 minutos",
+            "likes": 184,
+            "type": ["antioxidante", "energizante", "metabolismo"]
+
+        },
+        {
+            "id": 5,
+            "title": "Chá Verde",
+            "category": "Chá de Ervas",
+            "description": "O chá verde é conhecido por suas propriedades antioxidantes e benefícios para a saúde. Originado das folhas da planta Camellia sinensis, é apreciado por seu sabor fresco e estimulante.",
+            "image_url": "url_da_imagem_do_chá_verde",
+            "preparation_time": "3-5 minutos",
+            "likes": 230,
+            "type": ["antioxidante", "energizante", "metabolismo"]
+        },
+        {
+            "id": 6,
+            "title": "Camomila",
+            "category": "Chá de Ervas",
+            "description": "O chá de camomila é feito a partir das flores da planta Matricaria chamomilla. Conhecido por suas propriedades calmantes, é frequentemente consumido para promover o relaxamento e aliviar problemas digestivos.",
+            "image_url": "url_da_imagem_do_chá_de_camomila",
+            "preparation_time": "5-7 minutos",
+            "likes": 180,
+            "type": ["calmante", "sono", "digestivo"]
+        },
+        {
+            "id": 7,
+            "title": "Hortelã",
+            "category": "Chá de Ervas",
+            "description": "O chá de hortelã é preparado a partir das folhas da planta Mentha piperita. Com um sabor refrescante, é apreciado por suas propriedades digestivas e pode ajudar a aliviar sintomas de indigestão.",
+            "image_url": "url_da_imagem_do_chá_de_hortelã",
+            "preparation_time": "4-6 minutos",
+            "likes": 195,
+            "type": ["digestivo", "refrescante", "alívio"]
+        },
+        {
+            "id": 8,
+            "title": "Chá de Gengibre",
+            "category": "Chá de Ervas",
+            "description": "Feito a partir da raiz de gengibre, este chá é conhecido por suas propriedades anti-inflamatórias e de alívio para náuseas. Seu sabor picante o torna uma opção estimulante e revigorante.",
+            "image_url": "url_da_imagem_do_chá_de_gengibre",
+            "preparation_time": "8-10 minutos",
+            "likes": 210,
+            "type": ["anti-inflamatório", "estimulante", "náuseas"]
+        },
+        {
+            "id": 9,
+            "title": "Chá de Frutas Vermelhas",
+            "category": "Chá de Frutas",
+            "description": "Uma mistura deliciosa de frutas vermelhas, este chá é repleto de antioxidantes e vitaminas. Além de saboroso, é uma opção saudável e refrescante.",
+            "image_url": "url_da_imagem_do_chá_de_frutas_vermelhas",
+            "preparation_time": "4-6 minutos",
+            "likes": 185,
+            "type": ["antioxidante", "vitaminas", "saboroso"]
+        },
+        {
+            "id": 10,
+            "title": "Chá de Jasmim",
+            "category": "Chá de Flores",
+            "description": "O chá de jasmim é feito através da infusão de flores de jasmim com chá verde ou chá branco. Possui um aroma floral distintivo e é apreciado por suas propriedades relaxantes.",
+            "image_url": "url_da_imagem_do_chá_de_jasmim",
+            "preparation_time": "3-5 minutos",
+            "likes": 175,
+            "type": ["relaxante", "aroma floral", "chá branco"]
+        },
+        {
+            "id": 11,
+            "title": "Chá de Rooibos",
+            "category": "Chá de Ervas",
+            "description": "Originário da África do Sul, o chá de rooibos é conhecido por suas propriedades antioxidantes e sem cafeína. Possui um sabor suave e terroso.",
+            "image_url": "url_da_imagem_do_chá_de_rooibos",
+            "preparation_time": "5-7 minutos",
+            "likes": 200,
+            "type": ["antioxidante", "sem cafeína", "terroso"]
+        },
+        {
+            "id": 12,
+            "title": "Chá de Canela",
+            "category": "Chá de Especiarias",
+            "description": "Feito com a casca da canela, este chá tem um sabor quente e reconfortante. Além de ser delicioso, a canela é conhecida por suas propriedades anti-inflamatórias.",
+            "image_url": "url_da_imagem_do_chá_de_canela",
+            "preparation_time": "6-8 minutos",
+            "likes": 220,
+            "type": ["anti-inflamatório", "quente", "reconfortante"]
+        },
+        {
+            "id": 13,
+            "title": "Chá de Lavanda",
+            "category": "Chá de Flores",
+            "description": "O chá de lavanda é feito a partir das flores da planta de lavanda. Possui um aroma floral relaxante e é apreciado por suas propriedades calmantes.",
+            "image_url": "url_da_imagem_do_chá_de_lavanda",
+            "preparation_time": "4-6 minutos",
+            "likes": 190,
+            "type": ["calmante", "aroma floral", "relaxante"]
+        },
+        {
+            "id": 14,
+            "title": "Chá de Menta",
+            "category": "Chá de Ervas",
+            "description": "Feito com folhas de menta, este chá é conhecido por seu sabor refrescante e propriedades digestivas. Pode ajudar a aliviar sintomas de indigestão e proporcionar uma sensação revigorante.",
+            "image_url": "url_da_imagem_do_chá_de_menta",
+            "preparation_time": "3-5 minutos",
+            "likes": 205,
+            "type": ["digestivo", "refrescante", "revigorante"]
+        },
+        {
+            "id": 15,
+            "title": "Chá de Hibisco",
+            "category": "Chá de Flores",
+            "description": "O chá de hibisco é feito a partir do cálice da flor de hibisco. Conhecido por sua cor vibrante e sabor levemente ácido, é apreciado por suas propriedades antioxidantes e potencial de auxiliar na redução da pressão arterial.",
+            "image_url": "url_da_imagem_do_chá_de_hibisco",
+            "preparation_time": "5-7 minutos",
+            "likes": 195,
+            "type": ["antioxidante", "pressão arterial", "sabor ácido"]
+        },
+        {
+            "id": 16,
+            "title": "Chá de Ginseng",
+            "category": "Chá de Ervas",
+            "description": "Feito a partir da raiz de ginseng, este chá é valorizado por suas propriedades estimulantes e potencial de fortalecimento do sistema imunológico. Possui um sabor característico e revigorante.",
+            "image_url": "url_da_imagem_do_chá_de_ginseng",
+            "preparation_time": "8-10 minutos",
+            "likes": 210,
+            "type": ["estimulante", "imunidade", "revigorante"]
+        },
+        {
+            "id": 17,
+            "title": "Chá de Tulsi",
+            "category": "Chá de Ervas",
+            "description": "Também conhecido como manjericão sagrado, o chá de tulsi é apreciado por suas propriedades adaptogênicas e de alívio do estresse. Tem um sabor único e herbal.",
+            "image_url": "url_da_imagem_do_chá_de_tulsi",
+            "preparation_time": "4-6 minutos",
+            "likes": 185,
+            "type": ["adaptogênico", "alívio do estresse", "herbal"]
+        },
+        {
+            "id": 18,
+            "title": "Chá Preto",
+            "category": "Chá Tradicional",
+            "description": "O chá preto, derivado das folhas de Camellia sinensis, passa por um processo de oxidação completa, resultando em uma cor escura e sabor robusto. Contém cafeína e é apreciado por sua energia revitalizante.",
+            "image_url": "url_da_imagem_do_chá_preto",
+            "preparation_time": "3-5 minutos",
+            "likes": 220,
+            "type": ["energizante", "robusto", "cafeína"]
+        },
+        {
+            "id": 19,
+            "title": "Chá de Anis Estrelado",
+            "category": "Chá de Especiarias",
+            "description": "Feito com as sementes da planta de anis estrelado, este chá tem um sabor doce e aromático. É apreciado por suas propriedades digestivas e potencial de alívio de dores de estômago.",
+            "image_url": "url_da_imagem_do_chá_de_anis_estrelado",
+            "preparation_time": "5-7 minutos",
+            "likes": 200,
+            "type": ["digestivo", "dores de estômago", "aromático"]
+        },
+        {
+            "id": 20,
+            "title": "Chá de Morango",
+            "category": "Chá de Frutas",
+            "description": "Uma mistura deliciosa de chá preto com pedaços de morango desidratado, este chá tem um sabor frutado e agradável. É uma opção doce e refrescante.",
+            "image_url": "url_da_imagem_do_chá_de_morango",
+            "preparation_time": "4-6 minutos",
+            "likes": 195,
+            "type": ["frutado", "doce", "refrescante"]
+        },
+        {
+            "id": 21,
+            "title": "Chá de Cúrcuma",
+            "category": "Chá de Especiarias",
+            "description": "Feito com a raiz de cúrcuma, este chá é conhecido por suas propriedades anti-inflamatórias e antioxidantes. Possui um sabor terroso e levemente picante.",
+            "image_url": "url_da_imagem_do_chá_de_cúrcuma",
+            "preparation_time": "6-8 minutos",
+            "likes": 210,
+            "type": ["anti-inflamatório", "antioxidante", "picante"]
+        },
+        {
+            "id": 22,
+            "title": "Chá de Pêssego",
+            "category": "Chá de Frutas",
+            "description": "Uma infusão suave de chá preto com aromas naturais de pêssego, este chá tem um sabor delicado e frutado. É uma opção agradável para quem aprecia sabores mais leves.",
+            "image_url": "url_da_imagem_do_chá_de_pêssego",
+            "preparation_time": "3-5 minutos",
+            "likes": 190,
+            "type": ["delicado", "frutado", "leve"]
+        },
+        {
+            "id": 23,
+            "title": "Chá de Alecrim",
+            "category": "Chá de Ervas",
+            "description": "Feito com as folhas do alecrim, este chá tem um sabor herbal e revigorante. O alecrim é associado a propriedades que podem melhorar a memória e a concentração.",
+            "image_url": "url_da_imagem_do_chá_de_alecrim",
+            "preparation_time": "4-6 minutos",
+            "likes": 205,
+            "type": ["revigorante", "melhora da memória", "herbal"]
+        },
+        {
+            "id": 24,
+            "title": "Chá de Laranja e Canela",
+            "category": "Chá de Frutas",
+            "description": "Uma combinação deliciosa de chá preto com cascas de laranja e canela, este chá tem um sabor cítrico e quente. É uma opção reconfortante para os dias mais frios.",
+            "image_url": "url_da_imagem_do_chá_de_laranja_canela",
+            "preparation_time": "5-7 minutos",
+            "likes": 215,
+            "type": ["cítrico", "quente", "reconfortante"]
+        },
+        {
+            "id": 25,
+            "title": "Chá de Goji berry",
+            "category": "Chá de Frutas",
+            "description": "Feito com as bagas de goji, este chá é conhecido por suas propriedades antioxidantes e nutritivas. Tem um sabor levemente adocicado e é apreciado por seus potenciais benefícios à saúde.",
+            "image_url": "url_da_imagem_do_chá_de_gojiberry",
+            "preparation_time": "4-6 minutos",
+            "likes": 180,
+            "type": ["antioxidante", "nutritivo", "adoçicado"]
         }
-        ]
-      },
-      
-    {
-        "id" : 1,
-        "title" : "Chá Verde",
-        "category" : "Verdes",
-        "description" : ". É conhecido por seu sabor fresco e suave, além de ser associado a uma série de benefícios à saúde, como melhorias no metabolismo, auxílio na perda de peso, propriedades antioxidantes e potencial para promover a saúde cardiovascular e cerebral. É uma bebida apreciada em diversas culturas e valorizada por suas propriedades refrescantes e revigorantes.",
-        "image_url" : "image_url",
-        "preparation_time" : "2-3 minutos",
-        "likes" : 12,
-        "comments" : [
-            {
-                "user_id" : 1,                
-                "username" : "Antonio",
-                "comment" : "Muito bom recomendo"        
-        }
-        ]
-    },
-    {
-        "id": 2,
-        "title" : "Chá de Boldo",
-        "category": "Chá de Ervas",
-        "description": "O chá de boldo é feito a partir das folhas da planta Peumus boldus e é conhecido por suas propriedades digestivas e hepatoprotetoras.",
-        "image_url": "url_da_image_url_do_chá_de_boldo",
-        "preparation_time": "5-10 minutos",
-        "likes": 127, 
-        "comments" : [
-            {
-                "user_id" : 2,                    
-                "username" : "Antonio",
-                "comment" : "Muito bom recomendo"        
-        }
-        ]
-      },
-      {
-        "id": 3,
-        "title" : "Chá de Capim-limão",
-        "category": "Chá de Ervas",
-        "description": "O chá de capim-limão, também conhecido como chá de erva-cidreira, é feito a partir das folhas da planta Cymbopogon citratus. É apreciado por seu sabor cítrico e propriedades calmantes.",
-        "image_url": "url_da_image_url_do_chá_de_capim_limão",
-        "preparation_time": "5-7 minutos",
-        "likes": 184,
-        "comments" : [
-            {   
-                "user_id" : 3,                
-                "username" : "Antonio",
-                "comment" : "Muito bom recomendo"        
-        }
-        ]
-      }
-      
-      
- ]
-    
+    ]
 }

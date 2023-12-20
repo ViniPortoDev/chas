@@ -1,6 +1,6 @@
-import 'package:chas/src/repositories/teas_repository.dart';
+import 'package:chas/src/repositories/teas_local_repository.dart';
 import 'package:chas/src/utils/hex_colors.dart';
-import 'package:chas/src/view_models/teas_view_model.dart';
+import 'package:chas/src/controller/teas_controller.dart';
 import 'package:flutter/material.dart';
 
 class InfoTeaView extends StatelessWidget {
@@ -8,7 +8,7 @@ class InfoTeaView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = TeasViewModel(repository: TeasRepository());
+    final controller = TeasController(repository: TeasLocalRepository());
 
     final size = MediaQuery.of(context).size;
 
@@ -54,7 +54,7 @@ class InfoTeaView extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           InkWell(
-            onTap: () => viewModel.getTeaList(),
+            onTap: () => controller.getTeaList(),
             child: Container(
               width: 230,
               height: 40,
