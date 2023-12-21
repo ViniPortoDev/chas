@@ -1,6 +1,7 @@
 import 'package:chas/src/routes/routes.dart';
 import 'package:chas/src/utils/hex_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../global/widgets/tea_button_widget.dart';
 
@@ -14,7 +15,11 @@ class StartView extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset('assets/images/drinking_tea.png'),
+          const SizedBox(height: 100),
+          Lottie.asset(
+            'lib/src/mock/drinking_tea.json',
+            fit: BoxFit.cover,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 50,
