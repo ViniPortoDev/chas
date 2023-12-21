@@ -46,7 +46,7 @@ class TeaBoxWidget extends StatelessWidget {
                 SizedBox(
                   height: 90,
                   width: size.width * 0.35,
-                  child:  Text(
+                  child: Text(
                     maxLines: 5,
                     overflow: TextOverflow.ellipsis,
                     description,
@@ -92,7 +92,7 @@ class TeaBoxWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Image.asset(
+              child: Image.network(
                 teaImage,
                 fit: BoxFit.cover,
               ),

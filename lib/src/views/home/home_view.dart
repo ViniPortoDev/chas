@@ -118,6 +118,7 @@ class _HomeViewState extends State<HomeView> {
                         return ListView.separated(
                           shrinkWrap: true,
                           itemCount: teaList.length,
+                          physics: const NeverScrollableScrollPhysics(),
                           separatorBuilder: (BuildContext context, int index) =>
                               const SizedBox(height: 12),
                           itemBuilder: (BuildContext context, int index) =>
