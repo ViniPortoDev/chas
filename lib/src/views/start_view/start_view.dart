@@ -10,30 +10,32 @@ class StartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: HexColors.background,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SizedBox(height: 100),
-          Lottie.asset(
-            'lib/src/mock/drinking_tea.json',
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 50,
-              vertical: 60,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: HexColors.background,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(height: 100),
+            Lottie.asset(
+              'lib/src/mock/drinking_tea.json',
+              fit: BoxFit.cover,
             ),
-            child: TeaButtonWidget(
-              title: 'Conheça Chás',
-              onTap: () => Navigator.pushNamed(
-                context,
-                Routes.home,
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 50,
+                vertical: 60,
+              ),
+              child: TeaButtonWidget(
+                title: 'Conheça Chás',
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  Routes.home,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

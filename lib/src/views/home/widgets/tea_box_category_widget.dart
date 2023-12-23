@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class TeaBoxCategoryWidget extends StatelessWidget {
-  final String teaPhoto;
   final String teaTitle;
+  final String teaPhoto;
+  final double? size;
+  final Function()? onTap;
 
   const TeaBoxCategoryWidget({
     super.key,
-    required this.teaPhoto,
     required this.teaTitle,
+    required this.teaPhoto,
+    this.size,
+    this.onTap,
   });
 
   @override
@@ -15,16 +19,20 @@ class TeaBoxCategoryWidget extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-          height: 80,
-          width: 80,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Image.asset(
-            teaPhoto,
-            fit: BoxFit.cover,
+        InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: onTap,
+          child: Container(
+            height: size ?? 80,
+            width: size ?? 80,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Image.network(
+              teaPhoto,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         const SizedBox(height: 6),

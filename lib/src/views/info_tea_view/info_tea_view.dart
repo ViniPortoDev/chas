@@ -12,68 +12,70 @@ class InfoTeaView extends StatelessWidget {
 
     final size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      backgroundColor: HexColors.primary,
-      body: Column(
-        children: [
-          SizedBox(
-            height: 225,
-            width: size.width,
-            child: Image.asset(
-              'assets/images/cha_verde.jpg',
-              fit: BoxFit.cover,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: HexColors.primary,
+        body: Column(
+          children: [
+            SizedBox(
+              height: 225,
+              width: size.width,
+              child: Image.asset(
+                'assets/images/cha_verde.jpg',
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          const SizedBox(height: 40),
-          const Text(
-            'Chá Verde',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w600,
-              color: HexColors.white,
+            const SizedBox(height: 40),
+            const Text(
+              'Chá Verde',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
+                color: HexColors.white,
+              ),
             ),
-          ),
-          const Text(
-            'Medicinal',
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: HexColors.white,
-            ),
-          ),
-          const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              'Usado para Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper ex turpis, at porta ex condimentum non. Nullam nec lacus eget justo iaculis venenatis sollicitudin ut nunc.',
+            const Text(
+              'Medicinal',
               style: TextStyle(
                 fontSize: 14,
+                fontWeight: FontWeight.w500,
                 color: HexColors.white,
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          InkWell(
-            onTap: () => controller.getTeaList(),
-            child: Container(
-              width: 230,
-              height: 40,
-              decoration: BoxDecoration(
-                color: HexColors.white,
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: const Center(
-                child: Text(
-                  'Como Preparar',
-                  style: TextStyle(
-                    color: HexColors.primary,
-                    fontSize: 18.0,
-                  ),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Usado para Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper ex turpis, at porta ex condimentum non. Nullam nec lacus eget justo iaculis venenatis sollicitudin ut nunc.',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: HexColors.white,
                 ),
               ),
             ),
-          )
-        ],
+            const SizedBox(height: 20),
+            InkWell(
+              onTap: () => controller.getTeaList(),
+              child: Container(
+                width: 230,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: HexColors.white,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Como Preparar',
+                    style: TextStyle(
+                      color: HexColors.primary,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

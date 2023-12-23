@@ -2,15 +2,19 @@ import 'package:chas/src/utils/hex_colors.dart';
 import 'package:flutter/material.dart';
 
 class TeaBoxWidget extends StatelessWidget {
+  final String title;
   final String description;
   final String teaImage;
+  bool isFavorite;
 
   final void Function()? onTap;
-  const TeaBoxWidget({
+   TeaBoxWidget({
     super.key,
+    required this.title,
     required this.description,
     required this.teaImage,
     this.onTap,
+   required this.isFavorite,
   });
 
   @override
@@ -42,31 +46,52 @@ class TeaBoxWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(width: 12),
                 SizedBox(
+                  // color: Colors.red,
                   height: 90,
                   width: size.width * 0.35,
-                  child: Text(
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                    description,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12,
-                      color: HexColors.white,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          color: HexColors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        "  $description",
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: HexColors.white,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(
+                const SizedBox(width: 12),
+                SizedBox(
                   height: 90,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.eco_outlined,
-                        color: HexColors.white,
-                        size: 32,
-                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.eco_outlined,
+                          color: HexColors.white,
+                          size: 32,
+                        ),
+                      )
                     ],
                   ),
                 ),
