@@ -1,3 +1,4 @@
+import 'package:chas/src/models/tea_model.dart';
 import 'package:chas/src/repositories/teas_local_repository.dart';
 import 'package:chas/src/utils/hex_colors.dart';
 import 'package:chas/src/controller/teas_controller.dart';
@@ -8,7 +9,7 @@ class InfoTeaView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = TeasController(repository: TeasLocalRepository());
+    final TeaModel tea = ModalRoute.of(context)?.settings.arguments as TeaModel;
 
     final size = MediaQuery.of(context).size;
 
@@ -20,34 +21,34 @@ class InfoTeaView extends StatelessWidget {
             SizedBox(
               height: 225,
               width: size.width,
-              child: Image.asset(
-                'assets/images/cha_verde.jpg',
+              child: Image.network(
+                tea.imagemUrl,
                 fit: BoxFit.cover,
               ),
             ),
             const SizedBox(height: 40),
-            const Text(
-              'Chá Verde',
-              style: TextStyle(
+            Text(
+              tea.title,
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
                 color: HexColors.white,
               ),
             ),
-            const Text(
-              'Medicinal',
-              style: TextStyle(
+            Text(
+              tea.categories.toString(),
+              style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
                 color: HexColors.white,
               ),
             ),
             const SizedBox(height: 20),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Usado para Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper ex turpis, at porta ex condimentum non. Nullam nec lacus eget justo iaculis venenatis sollicitudin ut nunc.',
-                style: TextStyle(
+                tea.description,
+                style: const TextStyle(
                   fontSize: 14,
                   color: HexColors.white,
                 ),
@@ -55,7 +56,7 @@ class InfoTeaView extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             InkWell(
-              onTap: () => controller.getTeaList(),
+              onTap: () {},
               child: Container(
                 width: 230,
                 height: 40,

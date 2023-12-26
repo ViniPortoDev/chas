@@ -27,12 +27,6 @@ class TeasLocalRepository implements ITeasRepository {
     return await getAllTeas();
   }
   
-  @override
-  Future<List<TeaModel>> getTeasTypeThat(String filter) async {
-    // fetch all teas
-    List<TeaModel> teas = await getAllTeas();
-    // filter in all teas
-    List<TeaModel> outputList = teas.where((tea) => tea.type.contains(filter)).toList();
-    return outputList;
-  }
+
+
 }

@@ -43,7 +43,7 @@ class FilteredTeasView extends StatelessWidget {
                   Column(
                     children: List.generate(
                         3,
-                        (index) => const TeaBoxWidget(
+                        (index) =>  TeaBoxWidget(
                             title: 'title',
                             description: 'description',
                             teaImage:

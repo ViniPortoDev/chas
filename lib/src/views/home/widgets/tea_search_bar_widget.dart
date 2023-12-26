@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../utils/hex_colors.dart';
 
 class TeaSearchBarWidget extends StatelessWidget {
-  const TeaSearchBarWidget({super.key});
+ final void Function(String)?  onChanged;
+  const TeaSearchBarWidget({super.key, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class TeaSearchBarWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: TextFormField(
+      child: TextFormField(onChanged: onChanged,
         decoration: const InputDecoration(
             border: InputBorder.none,
             prefixIcon: Icon(
@@ -31,7 +32,7 @@ class TeaSearchBarWidget extends StatelessWidget {
             hintText: 'Procure o seu chá predileto...',
             hintStyle: TextStyle(
               color: Color(0xff9a9481),
-            )),
+            ),),
       ),
     );
   }

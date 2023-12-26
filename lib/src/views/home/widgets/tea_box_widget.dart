@@ -5,17 +5,17 @@ class TeaBoxWidget extends StatelessWidget {
   final String title;
   final String description;
   final String teaImage;
-  bool isFavorite;
+  ValueNotifier<bool> isFavorite;
 
   final void Function()? onTap;
-   TeaBoxWidget({
+  TeaBoxWidget({
     super.key,
     required this.title,
     required this.description,
     required this.teaImage,
     this.onTap,
-   required this.isFavorite,
-  });
+    bool isFav = false,
+  }) : isFavorite = ValueNotifier(isFav);
 
   @override
   Widget build(BuildContext context) {
@@ -84,14 +84,20 @@ class TeaBoxWidget extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.eco_outlined,
-                          color: HexColors.white,
-                          size: 32,
+                      ValueListenableBuilder(
+                        valueListenable: isFavorite,
+                        builder: (context, value, child) => IconButton(
+                          onPressed: () {
+                            isFavorite.value = !isFavorite.value;
+                          },
+                          icon: Icon(
+                            isFavorite.value ? Icons.eco : Icons.eco_outlined,
+                            color:
+                                isFavorite.value ? Colors.red : HexColors.white,
+                            size: 32,
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

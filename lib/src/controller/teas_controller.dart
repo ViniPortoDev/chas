@@ -97,4 +97,12 @@ class TeasController {
     final teaList = await repository.getTeaList();
     return teaList;
   }
+
+    Future<List<TeaModel>> getTeasTypeThat(String filter) async {
+    // fetch all teas
+    List<TeaModel> teas = await getTeaList();
+    // filter in all teas
+    List<TeaModel> outputList = teas.where((tea) => tea.type.contains(filter)).toList();
+    return outputList;
+  }
 }

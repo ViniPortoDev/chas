@@ -58,7 +58,11 @@ class _HomeViewState extends State<HomeView> {
                       userName: 'Vinicius',
                     ),
                     const SizedBox(height: 20),
-                    const TeaSearchBarWidget(),
+                    TeaSearchBarWidget(
+                      onChanged: (value) {
+                        controller.getTeasTypeThat(value);
+                      },
+                    ),
                     const SizedBox(height: 0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,16 +136,18 @@ class _HomeViewState extends State<HomeView> {
                             shrinkWrap: true,
                             itemCount: teaList.length,
                             physics: const NeverScrollableScrollPhysics(),
-                            separatorBuilder:
-                                ( context,  index) =>
-                                    const SizedBox(height: 12),
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(height: 12),
                             itemBuilder: (BuildContext context, int index) =>
                                 TeaBoxWidget(
                               title: teaList[index].title,
                               description: teaList[index].description,
                               teaImage: teaList[index].imagemUrl,
-                              onTap: () =>
-                                  Navigator.pushNamed(context, Routes.infoTea),
+                              onTap: () => Navigator.pushNamed(
+                                context,
+                                Routes.infoTea,
+                                arguments: teaList[index],
+                              ),
                             ),
                           );
                         }),
