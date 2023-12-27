@@ -5,8 +5,5 @@ class Routes {
   static const infoTea = '/infoTea';
   static const categories = '/home/categories';
   static const filteredTeas = '/home/filteredTeas';
-
-
-  
-
+  static const prepareTea = '/infoTea/prepareTea';
 }

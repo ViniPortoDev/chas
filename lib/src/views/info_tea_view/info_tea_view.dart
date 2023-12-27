@@ -1,5 +1,6 @@
 import 'package:chas/src/models/tea_model.dart';
 import 'package:chas/src/repositories/teas_local_repository.dart';
+import 'package:chas/src/routes/routes.dart';
 import 'package:chas/src/utils/hex_colors.dart';
 import 'package:chas/src/controller/teas_controller.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,7 @@ class InfoTeaView extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.pushNamed(context, Routes.prepareTea, arguments: tea),
               child: Container(
                 width: 230,
                 height: 40,

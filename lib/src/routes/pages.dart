@@ -1,6 +1,7 @@
 import 'package:chas/src/views/categories/categories_view.dart';
 import 'package:chas/src/views/filtered_teas/filtered_teas_view.dart';
 import 'package:chas/src/views/home/home_view.dart';
+import 'package:chas/src/views/prepare_tea_view/prepare_tea_view.dart';
 import 'package:chas/src/views/splash/splash_screen.dart';
 import 'package:chas/src/views/start_view/start_view.dart';
 import 'package:flutter/widgets.dart';
@@ -16,5 +17,6 @@ class Pages {
     Routes.infoTea: (context) => const InfoTeaView(),
     Routes.categories: (context) => CategoriesView(),
     Routes.filteredTeas: (context) => FilteredTeasView(),
+    Routes.prepareTea: (context) => PrepareTeaView(),
   };
 }
