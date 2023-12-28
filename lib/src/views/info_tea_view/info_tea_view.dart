@@ -48,7 +48,7 @@ class InfoTeaView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                tea.description,
+                "tea.description",
                 style: const TextStyle(
                   fontSize: 14,
                   color: HexColors.white,

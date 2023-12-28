@@ -98,11 +98,18 @@ class TeasController {
     return teaList;
   }
 
-    Future<List<TeaModel>> getTeasTypeThat(String filter) async {
+  Future<List<TeaModel>> getTeasTypeThat(String filter) async {
+    // TODO: adicionar filtro por nome
     // fetch all teas
     List<TeaModel> teas = await getTeaList();
     // filter in all teas
-    List<TeaModel> outputList = teas.where((tea) => tea.type.contains(filter)).toList();
+    List<TeaModel> outputList = teas.where((tea) => tea.categories.contains(filter)).toList();
     return outputList;
+  }
+
+  Future<bool> favoriteTea(TeaModel tea) async {
+    // TODO: try catch exception
+    tea.favorite();
+    return true;
   }
 }

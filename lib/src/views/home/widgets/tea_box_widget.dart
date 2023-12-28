@@ -8,12 +8,15 @@ class TeaBoxWidget extends StatelessWidget {
   ValueNotifier<bool> isFavorite;
 
   final void Function()? onTap;
+  final void Function()? onFavPressed;
+
   TeaBoxWidget({
     super.key,
     required this.title,
     required this.description,
     required this.teaImage,
     this.onTap,
+    this.onFavPressed,
     bool isFav = false,
   }) : isFavorite = ValueNotifier(isFav);
 
@@ -87,9 +90,7 @@ class TeaBoxWidget extends StatelessWidget {
                       ValueListenableBuilder(
                         valueListenable: isFavorite,
                         builder: (context, value, child) => IconButton(
-                          onPressed: () {
-                            isFavorite.value = !isFavorite.value;
-                          },
+                          onPressed: onFavPressed,
                           icon: Icon(
                             isFavorite.value ? Icons.eco : Icons.eco_outlined,
                             color:

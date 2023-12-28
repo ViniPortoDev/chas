@@ -3,279 +3,581 @@
         {
             "id": 1,
             "title" : "Erva Cidreira",
-            "categories": [""],
-            "description": "O chá de cidreira, também conhecido como melissa, é feito a partir das folhas da planta Melissa officinalis. É apreciado por seu sabor suave e propriedades calmantes, sendo usado tradicionalmente para relaxamento e alívio do estresse.",
+            "categories": ["emagrecedor", "relaxamento", "digestão", "alívios"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de cidreira, também conhecido como melissa, é feito a partir das folhas da planta Melissa officinalis. É apreciado por seu sabor suave e propriedades calmantes, sendo usado tradicionalmente para relaxamento e alívio do estresse." },
+                { "label": "Propriedades e benefícios", "value": "Possui propriedades calmantes que contribuem para o relaxamento e alívio do estresse. Além disso, é reconhecido por suas propriedades digestivas e pode auxiliar no emagrecimento." },
+                { "label": "Indicações de uso", "value": "Ideal para momentos de relaxamento, sendo uma ótima opção para aliviar o estresse. Pode também ser consumido após refeições devido às suas propriedades digestivas." },
+                { "label": "História e origem", "value": "A planta Melissa officinalis tem uma longa história de uso medicinal, sendo valorizada por várias culturas por suas propriedades terapêuticas. O chá de cidreira é uma tradição que perdura, especialmente devido aos seus efeitos relaxantes e agradável sabor suave." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas secas de cidreira em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas secas de cidreira",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "5-10 minutos" },
+                { "label": "Dicas de combinações", "value": "Combine com um toque de mel para adoçar sutilmente o sabor suave da cidreira. Adicionar algumas fatias de limão também pode proporcionar uma experiência refrescante." }
+            ],
             "image_url": "https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3105363:1625288000/Cha-de-erva-cidreira.jpeg?f=default&$p$f=bc4a383",
-            "preparation_time": "5-10 minutos",
             "likes": 156,
-            "type": ["emagrecedor", "relaxamento", "digestão", "alívios"],
-"isFavorite" : false
+            "isFavorite" : false
         },
         {
-            "id" : 2,
-            "title" : "Chá Verde",
-            "categories" :[""],         
-            "description" : "É conhecido por seu sabor fresco e suave, além de ser associado a uma série de benefícios à saúde, como melhorias no metabolismo, auxílio na perda de peso, propriedades antioxidantes e potencial para promover a saúde cardiovascular e cerebral. É uma bebida apreciada em diversas culturas e valorizada por suas propriedades refrescantes e revigorantes.",
-            "image_url" : "https://www.essentialnutrition.com.br/conteudos/wp-content/uploads/2022/08/cha-verde-para-que-serve-750x750.jpg",
-            "preparation_time" : "2-3 minutos",
-            "likes" : 12,
-            "type": ["digestão", "alívios"],
-            "isFavorite" : false
+            "id": 2,
+            "title": "Chá Verde",
+            "categories": ["digestão", "alívios"],
+            "description": [
+                { "label": "Breve descrição", "value": "É conhecido por seu sabor fresco e suave, além de ser associado a uma série de benefícios à saúde, como melhorias no metabolismo, auxílio na perda de peso, propriedades antioxidantes e potencial para promover a saúde cardiovascular e cerebral. É uma bebida apreciada em diversas culturas e valorizada por suas propriedades refrescantes e revigorantes." },
+                { "label": "Propriedades e benefícios", "value": "Possui propriedades antioxidantes, melhora no metabolismo e potencial para promover a saúde cardiovascular e cerebral." },
+                { "label": "Indicações de uso", "value": "Ideal para quem busca benefícios à saúde, como auxílio na perda de peso e melhoria no metabolismo." },
+                { "label": "História e origem", "value": "O chá verde tem uma longa tradição na cultura asiática, sendo valorizado por suas propriedades medicinais e sua associação com a promoção da saúde." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de chá verde em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de chá verde",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "2-3 minutos" },
+                { "label": "Dicas de combinações", "value": "Pode ser consumido puro ou combinado com um toque de limão para realçar o sabor fresco." }
+            ],
+            "image_url": "https://www.essentialnutrition.com.br/conteudos/wp-content/uploads/2022/08/cha-verde-para-que-serve-750x750.jpg",
+            "likes": 12,
+            "isFavorite": false
         },
         {
             "id": 3,
-            "title" : "Chá de Boldo",
-            "categories": [""],
-            "description": "O chá de boldo é feito a partir das folhas da planta Peumus boldus e é conhecido por suas propriedades digestivas e hepatoprotetoras.",
+            "title": "Chá de Boldo",
+            "categories": ["emagrecedor"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de boldo é feito a partir das folhas da planta Peumus boldus e é conhecido por suas propriedades digestivas e hepatoprotetoras." },
+                { "label": "Propriedades e benefícios", "value": "Possui propriedades digestivas e hepatoprotetoras, sendo associado a benefícios para o sistema digestivo." },
+                { "label": "Indicações de uso", "value": "Indicado para auxiliar na digestão e promover a saúde do fígado." },
+                { "label": "História e origem", "value": "O chá de boldo tem uma longa tradição em algumas culturas sul-americanas, sendo utilizado para promover a saúde digestiva." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de boldo em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de boldo",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "5-10 minutos" },
+                { "label": "Dicas de combinações", "value": "Pode ser consumido puro ou combinado com hortelã para um toque refrescante." }
+            ],
             "image_url": "https://www.baraoervamate.com.br/wp-content/uploads/2018/05/boldo-junho.png",
-            "preparation_time": "5-10 minutos",
-            "likes": 127, 
-            "type": ["emagrecedor"],    
-            "isFavorite" : false
+            "likes": 127,
+            "isFavorite": false
         },
         {
             "id": 4,
-            "title" : "Chá de Capim-limão",
-            "categories": [""],
-            "description": "O chá de capim-limão, também conhecido como chá de erva-cidreira, é feito a partir das folhas da planta Cymbopogon citratus. É apreciado por seu sabor cítrico e propriedades calmantes.",
+            "title": "Chá de Capim-limão",
+            "categories": ["calmante", "cítrico"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de capim-limão, também conhecido como chá de erva-cidreira, é feito a partir das folhas da planta Cymbopogon citratus. É apreciado por seu sabor cítrico e propriedades calmantes." },
+                { "label": "Propriedades e benefícios", "value": "Possui propriedades calmantes e um sabor cítrico refrescante." },
+                { "label": "Indicações de uso", "value": "Ideal para momentos de relaxamento e para quem aprecia sabores cítricos." },
+                { "label": "História e origem", "value": "O chá de capim-limão tem uma longa tradição em diversas culturas, sendo valorizado por suas propriedades calmantes e sabor refrescante." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de capim-limão em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de capim-limão",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "5-7 minutos" },
+                { "label": "Dicas de combinações", "value": "Pode ser combinado com uma rodela de laranja para intensificar o sabor cítrico." }
+            ],
             "image_url": "https://diariodonordeste.verdesmares.com.br/image/contentid/policy:7.4579173:1637788132/Capim-santo.jpg?f=default&$p$f=efbd3d3",
-            "preparation_time": "5-7 minutos",
             "likes": 184,
-	        "type": ["calmante", "cítrico"],
-            "isFavorite" : false
-
+            "isFavorite": false
         },
         {
             "id": 5,
             "title": "Chá de Erva-Doce",
-            "categories": [""],
-            "description": "O chá de erva-doce é feito a partir das sementes da planta Foeniculum vulgare. Conhecido por seu sabor levemente adocicado e propriedades digestivas, é apreciado por ajudar na digestão e aliviar desconfortos estomacais.",
+            "categories": ["digestivo", "adoçicado", "alívio estomacal"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de erva-doce é feito a partir das sementes da planta Foeniculum vulgare. Conhecido por seu sabor levemente adocicado e propriedades digestivas, é apreciado por ajudar na digestão e aliviar desconfortos estomacais." },
+                { "label": "Propriedades e benefícios", "value": "Possui sabor levemente adocicado e é conhecido por suas propriedades digestivas, sendo indicado para aliviar desconfortos estomacais." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem busca um chá digestivo e com sabor levemente adocicado." },
+                { "label": "História e origem", "value": "O chá de erva-doce tem uma longa tradição, sendo apreciado por suas propriedades digestivas em várias culturas ao redor do mundo." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das sementes de erva-doce em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de sementes de erva-doce",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "3-5 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce levemente com mel para intensificar o sabor adocicado." }
+            ],
             "image_url": "https://s2-ge.glbimg.com/9Ks3FR8cYu6_N7G6nmdPdpv6p-E=/0x0:1256x835/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2022/g/7/IoC0BDTUAqW53j667w6A/istock-1286035860.jpg",
-            "preparation_time": "3-5 minutos",
             "likes": 170,
-            "type": ["digestivo", "adoçicado", "alívio estomacal"],
-            "isFavorite" : false
-          },
-          
+            "isFavorite": false
+        },
         {
             "id": 6,
             "title": "Camomila",
-            "categories": [""],
-            "description": "O chá de camomila é feito a partir das flores da planta Matricaria chamomilla. Conhecido por suas propriedades calmantes, é frequentemente consumido para promover o relaxamento e aliviar problemas digestivos.",
+            "categories": ["calmante", "sono", "digestivo"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de camomila é feito a partir das flores da planta Matricaria chamomilla. Conhecido por suas propriedades calmantes, é frequentemente consumido para promover o relaxamento e aliviar problemas digestivos." },
+                { "label": "Propriedades e benefícios", "value": "Possui propriedades calmantes, sendo indicado para promover o relaxamento e aliviar problemas digestivos." },
+                { "label": "Indicações de uso", "value": "Ideal para ser consumido antes de dormir ou em momentos de relaxamento." },
+                { "label": "História e origem", "value": "A camomila tem uma longa tradição como uma erva medicinal, sendo utilizada por várias culturas para promover o relaxamento e alívio de desconfortos digestivos." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das flores de camomila em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de flores de camomila",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "5-7 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com um pouco de mel para uma experiência mais suave." }
+            ],
             "image_url": "https://static.tuasaude.com/media/article/kq/pj/beneficios-do-cha-de-camomila_57380_l.jpg",
-            "preparation_time": "5-7 minutos",
             "likes": 180,
-            "type": ["calmante", "sono", "digestivo"],
-            "isFavorite" : false
-        },
+            "isFavorite": false
+        },                                
         {
             "id": 7,
             "title": "Hortelã",
-            "categories": [""],
-            "description": "O chá de hortelã é preparado a partir das folhas da planta Mentha piperita. Com um sabor refrescante, é apreciado por suas propriedades digestivas e pode ajudar a aliviar sintomas de indigestão.",
+            "categories": ["digestivo", "refrescante", "alívio"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de hortelã é preparado a partir das folhas da planta Mentha piperita. Com um sabor refrescante, é apreciado por suas propriedades digestivas e pode ajudar a aliviar sintomas de indigestão." },
+                { "label": "Propriedades e benefícios", "value": "Possui propriedades digestivas e refrescantes, sendo indicado para aliviar sintomas de indigestão." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem busca um chá refrescante e que auxilia na digestão." },
+                { "label": "História e origem", "value": "O hortelã é amplamente utilizado em diversas culturas devido às suas propriedades medicinais, especialmente para problemas digestivos." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de hortelã em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de hortelã",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "4-6 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com um pouco de mel para uma experiência mais suave." }
+            ],
             "image_url": "https://nutritotal.com.br/publico-geral/wp-content/uploads/2022/06/Cha_Hortela_Nutritotal_Para_Todos_novosite.png",
-            "preparation_time": "4-6 minutos",
             "likes": 195,
-            "type": ["digestivo", "refrescante", "alívio"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 8,
             "title": "Chá de Gengibre",
-            "categories": [""],
-            "description": "Feito a partir da raiz de gengibre, este chá é conhecido por suas propriedades anti-inflamatórias e de alívio para náuseas. Seu sabor picante o torna uma opção estimulante e revigorante.",
+            "categories": ["anti-inflamatório", "estimulante", "náuseas"],
+            "description": [
+                { "label": "Breve descrição", "value": "Feito a partir da raiz de gengibre, este chá é conhecido por suas propriedades anti-inflamatórias e de alívio para náuseas. Seu sabor picante o torna uma opção estimulante e revigorante." },
+                { "label": "Propriedades e benefícios", "value": "Possui propriedades anti-inflamatórias, estimulantes e alivia sintomas de náuseas." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem busca um chá estimulante e que auxilia no alívio de náuseas." },
+                { "label": "História e origem", "value": "O gengibre tem uma longa história como uma planta medicinal, sendo valorizado por suas propriedades terapêuticas." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão da raiz de gengibre em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de raiz de gengibre ralada",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "8-10 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com um pouco de mel e adicione uma rodela de limão para um sabor extra." }
+            ],
             "image_url": "https://cdn0.tudoreceitas.com/pt/posts/3/6/9/cha_de_gengibre_limao_e_propolis_9963_600.jpg",
-            "preparation_time": "8-10 minutos",
             "likes": 210,
-            "type": ["anti-inflamatório", "estimulante", "náuseas"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 9,
             "title": "Chá de Frutas Vermelhas",
-            "categories": [""],
-            "description": "Uma mistura deliciosa de frutas vermelhas, este chá é repleto de antioxidantes e vitaminas. Além de saboroso, é uma opção saudável e refrescante.",
+            "categories": ["antioxidante", "vitaminas", "saboroso"],
+            "description": [
+                { "label": "Breve descrição", "value": "Uma mistura deliciosa de frutas vermelhas, este chá é repleto de antioxidantes e vitaminas. Além de saboroso, é uma opção saudável e refrescante." },
+                { "label": "Propriedades e benefícios", "value": "Rico em antioxidantes e vitaminas, é uma opção saudável e saborosa." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem busca um chá rico em nutrientes e com sabor agradável." },
+                { "label": "História e origem", "value": "Chá de frutas vermelhas é uma criação moderna que combina diferentes frutas vermelhas para criar uma bebida deliciosa e nutritiva." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão da mistura de frutas vermelhas em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá da mistura de frutas vermelhas",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "4-6 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com um pouco de mel se preferir um sabor mais doce." }
+            ],
             "image_url": "https://img.freepik.com/fotos-premium/cha-de-frutas-vermelhas-na-xicara-e-bule_105694-52.jpg?w=2000",
-            "preparation_time": "4-6 minutos",
             "likes": 185,
-            "type": ["antioxidante", "vitaminas", "saboroso"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 10,
             "title": "Chá de Jasmim",
-            "categories": [""],
-            "description": "O chá de jasmim é feito através da infusão de flores de jasmim com chá verde ou chá branco. Possui um aroma floral distintivo e é apreciado por suas propriedades relaxantes.",
+            "categories": ["relaxante", "aroma floral", "chá branco"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de jasmim é feito através da infusão de flores de jasmim com chá verde ou chá branco. Possui um aroma floral distintivo e é apreciado por suas propriedades relaxantes." },
+                { "label": "Propriedades e benefícios", "value": "Possui um aroma floral distintivo e é conhecido por suas propriedades relaxantes." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem busca um chá relaxante e com aroma floral." },
+                { "label": "História e origem", "value": "O chá de jasmim tem origens na China, onde a infusão de flores de jasmim era apreciada por sua fragrância única e propriedades relaxantes." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão de flores de jasmim com chá verde ou chá branco em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de flores de jasmim",
+                    "200ml de chá verde ou chá branco",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "3-5 minutos" },
+                { "label": "Dicas de combinações", "value": "Pode ser apreciado puro ou com um toque de mel para suavizar o sabor." }
+            ],
             "image_url": "https://cdn.awsli.com.br/600x700/1331/1331639/produto/62445292/bbbd70748f.jpg",
-            "preparation_time": "3-5 minutos",
             "likes": 175,
-            "type": ["relaxante", "aroma floral", "chá branco"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 11,
             "title": "Chá de Rooibos",
-            "categories": [""],
-            "description": "Originário da África do Sul, o chá de rooibos é conhecido por suas propriedades antioxidantes e sem cafeína. Possui um sabor suave e terroso.",
+            "categories": ["antioxidante", "sem cafeína", "terroso"],
+            "description": [
+                { "label": "Breve descrição", "value": "Originário da África do Sul, o chá de rooibos é conhecido por suas propriedades antioxidantes e não contém cafeína. Possui um sabor suave e terroso." },
+                { "label": "Propriedades e benefícios", "value": "Rico em antioxidantes e adequado para quem busca uma opção de chá sem cafeína." },
+                { "label": "Indicações de uso", "value": "Recomendado para momentos de relaxamento, especialmente à noite devido à ausência de cafeína." },
+                { "label": "História e origem", "value": "O chá de rooibos tem suas raízes na África do Sul, onde é apreciado como uma bebida saudável e sem cafeína." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de rooibos em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de rooibos",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "5-7 minutos" },
+                { "label": "Dicas de combinações", "value": "Pode ser consumido puro ou com uma rodela de laranja para um toque cítrico." }
+            ],
             "image_url": "https://static1.minhavida.com.br/articles/68/5f/84/c1/rooibos-cha-orig-1.jpeg",
-            "preparation_time": "5-7 minutos",
             "likes": 200,
-            "type": ["antioxidante", "sem cafeína", "terroso"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 12,
             "title": "Chá de Canela",
-            "categories": [""],
-            "description": "Feito com a casca da canela, este chá tem um sabor quente e reconfortante. Além de ser delicioso, a canela é conhecida por suas propriedades anti-inflamatórias.",
+            "categories": ["anti-inflamatório", "quente", "reconfortante"],
+            "description": [
+                { "label": "Breve descrição", "value": "Feito com a casca da canela, este chá tem um sabor quente e reconfortante. Além de ser delicioso, a canela é conhecida por suas propriedades anti-inflamatórias." },
+                { "label": "Propriedades e benefícios", "value": "Possui um sabor quente e reconfortante, além de apresentar propriedades anti-inflamatórias." },
+                { "label": "Indicações de uso", "value": "Ideal para momentos de relaxamento, especialmente em dias mais frios." },
+                { "label": "História e origem", "value": "A canela é uma especiaria amplamente utilizada em diversas culturas ao longo da história, sendo valorizada não apenas pelo sabor, mas também por suas propriedades medicinais." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão da casca de canela em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "2-3 pedaços de casca de canela",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "6-8 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com mel para realçar o sabor quente da canela." }
+            ],
             "image_url": "https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3057474:1620914853/image.jpg?h=630&q=0.6&w=1200&$p$h$q$w=f76cc5e",
-            "preparation_time": "6-8 minutos",
             "likes": 220,
-            "type": ["anti-inflamatório", "quente", "reconfortante"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 13,
             "title": "Chá de Lavanda",
-            "categories": [""],
-            "description": "O chá de lavanda é feito a partir das flores da planta de lavanda. Possui um aroma floral relaxante e é apreciado por suas propriedades calmantes.",
+            "categories": ["calmante", "aroma floral", "relaxante"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de lavanda é feito a partir das flores da planta de lavanda. Possui um aroma floral relaxante e é apreciado por suas propriedades calmantes." },
+                { "label": "Propriedades e benefícios", "value": "Possui um aroma floral relaxante, sendo conhecido por suas propriedades calmantes." },
+                { "label": "Indicações de uso", "value": "Recomendado para momentos de relaxamento, especialmente antes de dormir." },
+                { "label": "História e origem", "value": "A lavanda é conhecida por suas propriedades aromáticas e medicinais, sendo utilizada ao longo dos séculos para promover o relaxamento e o bem-estar." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das flores de lavanda em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de flores de lavanda",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "4-6 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com um pouco de mel para uma experiência mais suave." }
+            ],
             "image_url": "https://s2.glbimg.com/whKL1zRj_Zp1YwAwxxOtld3q_-o=/620x455/e.glbimg.com/og/ed/f/original/2018/10/22/cha-de-lavanda.jpg",
-            "preparation_time": "4-6 minutos",
             "likes": 190,
-            "type": ["calmante", "aroma floral", "relaxante"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 14,
             "title": "Chá de Menta",
-            "categories": [""],
-            "description": "Feito com folhas de menta, este chá é conhecido por seu sabor refrescante e propriedades digestivas. Pode ajudar a aliviar sintomas de indigestão e proporcionar uma sensação revigorante.",
+            "categories": ["digestivo", "refrescante", "revigorante"],
+            "description": [
+                { "label": "Breve descrição", "value": "Feito com folhas de menta, este chá é conhecido por seu sabor refrescante e propriedades digestivas. Pode ajudar a aliviar sintomas de indigestão e proporcionar uma sensação revigorante." },
+                { "label": "Propriedades e benefícios", "value": "Possui sabor refrescante e propriedades digestivas, sendo revigorante para o corpo." },
+                { "label": "Indicações de uso", "value": "Recomendado para momentos em que se busca uma sensação refrescante e digestiva." },
+                { "label": "História e origem", "value": "A menta é conhecida por suas propriedades medicinais desde a antiguidade, sendo apreciada por diversas culturas ao redor do mundo." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de menta em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de menta",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "3-5 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce levemente e adicione uma rodela de limão para uma experiência mais refrescante." }
+            ],
             "image_url": "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2023/07/26/1690786598-menta-propriedades-do-cha-refrescante-vao-alem-das-digestivas.jpg",
-            "preparation_time": "3-5 minutos",
             "likes": 205,
-            "type": ["digestivo", "refrescante", "revigorante"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 15,
             "title": "Chá de Hibisco",
-            "categories": [""],
-            "description": "O chá de hibisco é feito a partir do cálice da flor de hibisco. Conhecido por sua cor vibrante e sabor levemente ácido, é apreciado por suas propriedades antioxidantes e potencial de auxiliar na redução da pressão arterial.",
+            "categories": ["antioxidante", "pressão arterial", "sabor ácido"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá de hibisco é feito a partir do cálice da flor de hibisco. Conhecido por sua cor vibrante e sabor levemente ácido, é apreciado por suas propriedades antioxidantes e potencial de auxiliar na redução da pressão arterial." },
+                { "label": "Propriedades e benefícios", "value": "Possui uma cor vibrante e sabor levemente ácido, além de propriedades antioxidantes." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem busca uma opção saudável e refrescante." },
+                { "label": "História e origem", "value": "O hibisco é utilizado tradicionalmente em várias culturas devido às suas propriedades medicinais e sabor único." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão do cálice da flor de hibisco em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de flores de hibisco secas",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "5-7 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce a gosto e sirva com gelo para uma versão gelada." }
+            ],
             "image_url": "https://cdn.awsli.com.br/600x700/1579/1579573/produto/65206633/7b5d2a97ac.jpg",
-            "preparation_time": "5-7 minutos",
             "likes": 195,
-            "type": ["antioxidante", "pressão arterial", "sabor ácido"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 16,
             "title": "Chá de Ginseng",
-            "categories": [""],
-            "description": "Feito a partir da raiz de ginseng, este chá é valorizado por suas propriedades estimulantes e potencial de fortalecimento do sistema imunológico. Possui um sabor característico e revigorante.",
+            "categories": ["estimulante", "imunidade", "revigorante"],
+            "description": [
+                { "label": "Breve descrição", "value": "Feito a partir da raiz de ginseng, este chá é valorizado por suas propriedades estimulantes e potencial de fortalecimento do sistema imunológico. Possui um sabor característico e revigorante." },
+                { "label": "Propriedades e benefícios", "value": "Possui um sabor característico e é valorizado por suas propriedades estimulantes e fortalecedoras do sistema imunológico." },
+                { "label": "Indicações de uso", "value": "Recomendado para momentos em que se busca energia e fortalecimento do sistema imunológico." },
+                { "label": "História e origem", "value": "O ginseng é uma planta medicinal amplamente utilizada na medicina tradicional asiática há séculos, sendo reconhecida por seus benefícios para a saúde." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão da raiz de ginseng em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de raiz de ginseng",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "8-10 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com mel e limão para equilibrar o sabor característico do ginseng." }
+            ],
             "image_url": "https://static.tuasaude.com/media/article/hj/kv/ginseng_21650_l.jpg",
-            "preparation_time": "8-10 minutos",
             "likes": 210,
-            "type": ["estimulante", "imunidade", "revigorante"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 17,
             "title": "Chá de Tulsi",
-            "categories": [""],
-            "description": "Também conhecido como manjericão sagrado, o chá de tulsi é apreciado por suas propriedades adaptogênicas e de alívio do estresse. Tem um sabor único e herbal.",
+            "categories": ["adaptogênico", "alívio do estresse", "herbal"],
+            "description": [
+                { "label": "Breve descrição", "value": "Também conhecido como manjericão sagrado, o chá de tulsi é apreciado por suas propriedades adaptogênicas e de alívio do estresse. Tem um sabor único e herbal." },
+                { "label": "Propriedades e benefícios", "value": "Possui propriedades adaptogênicas e é conhecido por aliviar o estresse. Apresenta um sabor único e herbal." },
+                { "label": "Indicações de uso", "value": "Recomendado para momentos de relaxamento e alívio do estresse." },
+                { "label": "História e origem", "value": "O tulsi, ou manjericão sagrado, é considerado uma planta sagrada na Índia e é valorizado por suas propriedades medicinais ao longo da história." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de tulsi em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de tulsi",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "4-6 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com mel para suavizar o sabor herbal." }
+            ],
             "image_url": "https://www.mundoboaforma.com.br/wp-content/uploads/2019/01/cha-de-tulsi.jpg",
-            "preparation_time": "4-6 minutos",
             "likes": 185,
-            "type": ["adaptogênico", "alívio do estresse", "herbal"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 18,
             "title": "Chá Preto",
-            "categories": [""],
-            "description": "O chá preto, derivado das folhas de Camellia sinensis, passa por um processo de oxidação completa, resultando em uma cor escura e sabor robusto. Contém cafeína e é apreciado por sua energia revitalizante.",
+            "categories": ["energizante", "robusto", "cafeína"],
+            "description": [
+                { "label": "Breve descrição", "value": "O chá preto, derivado das folhas de Camellia sinensis, passa por um processo de oxidação completa, resultando em uma cor escura e sabor robusto. Contém cafeína e é apreciado por sua energia revitalizante." },
+                { "label": "Propriedades e benefícios", "value": "Apresenta uma cor escura e sabor robusto devido à oxidação completa das folhas de Camellia sinensis. Contém cafeína, proporcionando energia revitalizante." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem busca uma opção energizante e robusta." },
+                { "label": "História e origem", "value": "O chá preto tem uma longa história, sendo originário da China. É amplamente consumido e apreciado em diversas partes do mundo." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de chá preto em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de chá preto",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "3-5 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce a gosto e adicione uma rodela de limão para um toque cítrico." }
+            ],
             "image_url": "https://s2-ge.glbimg.com/1VBIcgH2TZcAELKaahBaw4VbY6g=/0x0:612x408/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2023/0/o/txIJa4ROaxlnT9AXbVpg/cha-preto.jpeg",
-            "preparation_time": "3-5 minutos",
             "likes": 220,
-            "type": ["energizante", "robusto", "cafeína"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 19,
             "title": "Chá de Anis Estrelado",
-            "categories": [""],
-            "description": "Feito com as sementes da planta de anis estrelado, este chá tem um sabor doce e aromático. É apreciado por suas propriedades digestivas e potencial de alívio de dores de estômago.",
+            "categories": ["digestivo", "dores de estômago", "aromático"],
+            "description": [
+                { "label": "Breve descrição", "value": "Feito com as sementes da planta de anis estrelado, este chá tem um sabor doce e aromático. É apreciado por suas propriedades digestivas e potencial de alívio de dores de estômago." },
+                { "label": "Propriedades e benefícios", "value": "Apresenta um sabor doce e aromático, sendo conhecido por suas propriedades digestivas e potencial de alívio de dores de estômago." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem busca uma opção digestiva e alívio de dores de estômago." },
+                { "label": "História e origem", "value": "O anis estrelado é utilizado na culinária e na medicina tradicional em várias culturas. O chá é uma forma popular de aproveitar seus benefícios." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das sementes de anis estrelado em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "2 anis estrelado",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "5-7 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com mel para realçar o sabor doce." }
+            ],
             "image_url": "https://www.dicasdemulher.com.br/wp-content/uploads/2020/11/anis-estrelado-01.png",
-            "preparation_time": "5-7 minutos",
             "likes": 200,
-            "type": ["digestivo", "dores de estômago", "aromático"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 20,
             "title": "Chá de Morango",
-            "categories": [""],
-            "description": "Uma mistura deliciosa de chá preto com pedaços de morango desidratado, este chá tem um sabor frutado e agradável. É uma opção doce e refrescante.",
+            "categories": ["frutado", "doce", "refrescante"],
+            "description": [
+                { "label": "Breve descrição", "value": "Uma mistura deliciosa de chá preto com pedaços de morango desidratado, este chá tem um sabor frutado e agradável. É uma opção doce e refrescante." },
+                { "label": "Propriedades e benefícios", "value": "Apresenta um sabor frutado e agradável devido à mistura de chá preto com morango desidratado." },
+                { "label": "Indicações de uso", "value": "Recomendado para quem aprecia chás frutados, doces e refrescantes." },
+                { "label": "História e origem", "value": "A combinação de chá preto e morango resulta em uma bebida deliciosa e popular em diversas culturas ao redor do mundo." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de chá preto e pedaços de morango desidratado em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de chá preto",
+                    "2 colheres de chá de morango desidratado",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "4-6 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce levemente e sirva com fatias de morango para decorar." }
+            ],
             "image_url": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-cha-de-morango-1-730x449.jpg",
-            "preparation_time": "4-6 minutos",
             "likes": 195,
-            "type": ["frutado", "doce", "refrescante"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 21,
             "title": "Chá de Cúrcuma",
-            "categories": [""],
-            "description": "Feito com a raiz de cúrcuma, este chá é conhecido por suas propriedades anti-inflamatórias e antioxidantes. Possui um sabor terroso e levemente picante.",
+            "categories": ["anti-inflamatório", "antioxidante", "picante"],
+            "description": [
+                { "label": "Breve descrição", "value": "Feito com a raiz de cúrcuma, este chá é conhecido por suas propriedades anti-inflamatórias e antioxidantes. Possui um sabor terroso e levemente picante." },
+                { "label": "Propriedades e benefícios", "value": "Reconhecido por suas propriedades anti-inflamatórias e antioxidantes, sendo uma opção saudável para apoiar a saúde geral." },
+                { "label": "Indicações de uso", "value": "Ideal para quem busca benefícios para a saúde, especialmente aqueles relacionados à redução da inflamação." },
+                { "label": "História e origem", "value": "A cúrcuma é uma planta amplamente utilizada na medicina tradicional, especialmente na culinária e medicina asiáticas, devido aos seus benefícios para a saúde." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão da raiz de cúrcuma em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de raiz de cúrcuma",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "6-8 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com mel e acrescente uma rodela de limão para realçar o sabor picante da cúrcuma." }
+            ],
             "image_url": "https://uploads.metropoles.com/wp-content/uploads/2023/08/18135828/Cha-de-curcuma_1.jpg",
-            "preparation_time": "6-8 minutos",
             "likes": 210,
-            "type": ["anti-inflamatório", "antioxidante", "picante"],
-            "isFavorite" : false
-        },
+            "isFavorite": false
+        },                                       
         {
             "id": 22,
             "title": "Chá de Pêssego",
-            "categories": [""],
-            "description": "Uma infusão suave de chá preto com aromas naturais de pêssego, este chá tem um sabor delicado e frutado. É uma opção agradável para quem aprecia sabores mais leves.",
+            "categories": ["delicado", "frutado", "leve"],
+            "description": [
+                { "label": "Breve descrição", "value": "Uma infusão suave de chá preto com aromas naturais de pêssego, este chá tem um sabor delicado e frutado. É uma opção agradável para quem aprecia sabores mais leves." },
+                { "label": "Propriedades e benefícios", "value": "A delicadeza e o sabor frutado do pêssego oferecem uma experiência leve e agradável. O chá preto também contribui com propriedades antioxidantes." },
+                { "label": "Indicações de uso", "value": "Ideal para momentos de relaxamento e apreciação de sabores suaves. Perfeito para quem busca uma opção de chá frutado." },
+                { "label": "História e origem", "value": "A combinação de chá preto e pêssego é uma criação que combina a tradição do chá com os sabores frescos e naturais da fruta." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão de chá preto com aromas naturais de pêssego." },
+                { "label": "Ingredientes", "value": [
+                    "1 sachê de chá preto com aromas de pêssego",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "3-5 minutos" },
+                { "label": "Dicas de combinações", "value": "Acompanha bem com biscoitos leves ou bolos de frutas para uma experiência completa." }
+            ],
             "image_url": "https://www.baraoervamate.com.br/wp-content/uploads/2018/12/cha%CC%81-de-pe%CC%82ssego.png",
-            "preparation_time": "3-5 minutos",
             "likes": 190,
-            "type": ["delicado", "frutado", "leve"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 23,
             "title": "Chá de Alecrim",
-            "categories": [""],
-            "description": "Feito com as folhas do alecrim, este chá tem um sabor herbal e revigorante. O alecrim é associado a propriedades que podem melhorar a memória e a concentração.",
+            "categories": ["revigorante", "melhora da memória", "herbal"],
+            "description": [
+                { "label": "Breve descrição", "value": "Feito com as folhas do alecrim, este chá tem um sabor herbal e revigorante. O alecrim é associado a propriedades que podem melhorar a memória e a concentração." },
+                { "label": "Propriedades e benefícios", "value": "Além de seu sabor revigorante, o alecrim é conhecido por suas propriedades que podem estimular a memória e a concentração." },
+                { "label": "Indicações de uso", "value": "Ótima escolha para quem busca um chá revigorante e deseja aproveitar os potenciais benefícios para a memória." },
+                { "label": "História e origem", "value": "O alecrim é uma erva aromática comum na culinária e medicina, sendo valorizado por suas propriedades desde tempos antigos." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das folhas de alecrim em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de chá de folhas de alecrim",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "4-6 minutos" },
+                { "label": "Dicas de combinações", "value": "Experimente adicionar uma rodela de limão para realçar o sabor herbal." }
+            ],
             "image_url": "https://s2-ge.glbimg.com/1hFTMzPUPJvLuKbm2_15Omocqfg=/0x0:1254x836/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2020/t/4/tvNRDnQGytA73ld4jOuA/cha-alecrim.jpg",
-            "preparation_time": "4-6 minutos",
             "likes": 205,
-            "type": ["revigorante", "melhora da memória", "herbal"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 24,
             "title": "Chá de Laranja e Canela",
-            "categories": [""],
-            "description": "Uma combinação deliciosa de chá preto com cascas de laranja e canela, este chá tem um sabor cítrico e quente. É uma opção reconfortante para os dias mais frios.",
+            "categories": ["cítrico", "quente", "reconfortante"],
+            "description": [
+                { "label": "Breve descrição", "value": "Uma combinação deliciosa de chá preto com cascas de laranja e canela, este chá tem um sabor cítrico e quente. É uma opção reconfortante para os dias mais frios." },
+                { "label": "Propriedades e benefícios", "value": "Além do sabor cítrico e reconfortante, o chá preto oferece propriedades antioxidantes, enquanto a laranja e a canela contribuem com sabores e aromas únicos." },
+                { "label": "Indicações de uso", "value": "Perfeito para momentos de relaxamento, especialmente em dias mais frios, proporcionando uma experiência reconfortante." },
+                { "label": "História e origem", "value": "A combinação de laranja e canela em chás é popular em diversas culturas, resultando em uma bebida reconfortante e deliciosa." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão de chá preto com cascas de laranja e canela." },
+                { "label": "Ingredientes", "value": [
+                    "1 sachê de chá preto",
+                    "Casca de laranja",
+                    "Canela em pau",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "5-7 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com mel para um toque extra de doçura e conforto." }
+            ],
             "image_url": "https://informebrasil.com.br/wp-content/uploads/2020/09/Cha-de-canela-e-laranja-6567-1.jpg",
-            "preparation_time": "5-7 minutos",
             "likes": 215,
-            "type": ["cítrico", "quente", "reconfortante"],
-            "isFavorite" : false
+            "isFavorite": false
         },
         {
             "id": 25,
-            "title": "Chá de Goji berry",
-            "categories": [""],
-            "description": "Feito com as bagas de goji, este chá é conhecido por suas propriedades antioxidantes e nutritivas. Tem um sabor levemente adocicado e é apreciado por seus potenciais benefícios à saúde.",
+            "title": "Chá de Goji Berry",
+            "categories": ["antioxidante", "nutritivo", "adoçicado"],
+            "description": [
+                { "label": "Breve descrição", "value": "Feito com as bagas de goji, este chá é conhecido por suas propriedades antioxidantes e nutritivas. Tem um sabor levemente adocicado e é apreciado por seus potenciais benefícios à saúde." },
+                { "label": "Propriedades e benefícios", "value": "Rico em antioxidantes e nutrientes, o chá de goji berry oferece uma opção saudável e deliciosa para quem busca fortalecer o sistema imunológico." },
+                { "label": "Indicações de uso", "value": "Perfeito para quem deseja desfrutar de uma bebida saudável e saborosa, especialmente aqueles em busca de alimentos nutritivos." },
+                { "label": "História e origem", "value": "O goji berry é originário da Ásia e tem sido tradicionalmente utilizado na medicina chinesa devido aos seus potenciais benefícios à saúde." }
+            ],
+            "preparation": [
+                { "label": "Preparo", "value": "Infusão das bagas de goji em água quente." },
+                { "label": "Ingredientes", "value": [
+                    "1 colher de sopa de goji berry",
+                    "200ml de água quente"
+                ] },
+                { "label": "Tempo de preparo", "value": "4-6 minutos" },
+                { "label": "Dicas de combinações", "value": "Adoce com um pouco de mel, se desejar, para ressaltar o sabor adocicado." }
+            ],
             "image_url": "https://t2.uc.ltmcdn.com/pt/posts/5/2/5/como_fazer_um_cha_de_goji_berry_20525_orig.jpg",
-            "preparation_time": "4-6 minutos",
             "likes": 180,
-            "type": ["antioxidante", "nutritivo", "adoçicado"],
-            "isFavorite" : false
-        }
+            "isFavorite": false
+        }                                
     ]
 }
