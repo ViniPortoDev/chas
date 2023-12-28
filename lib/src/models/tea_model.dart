@@ -7,12 +7,10 @@ class TeaModel {
   final int id;
   final String title;
   final List<dynamic> categories;
-  final String description;
+  final List<dynamic> description;
   final String imagemUrl;
-  final String preparationTime;
   final int likes;
-  final List<dynamic> type;
-   final bool isFavorite;
+  bool isFavorite;
   // final List<TeaCommentsModel> comments;
 
   TeaModel({
@@ -21,10 +19,8 @@ class TeaModel {
     required this.categories,
     required this.description,
     required this.imagemUrl,
-    required this.preparationTime,
     required this.likes,
-    required this.type,
-     this.isFavorite = false
+    this.isFavorite = false
     // required this.comments,
   });
  Map<String, dynamic> toMap() {
@@ -34,9 +30,7 @@ class TeaModel {
       'categories': categories,
       'description': description,
       'imagemUrl': imagemUrl,
-      'preparationTime': preparationTime,
       'likes': likes,
-      'type': type,
       'isFavorite': isFavorite,
 
       // 'comments': comments.map((x) => x.toMap()).toList(),
@@ -48,11 +42,9 @@ class TeaModel {
       id: map['id'] as int,
       title: map['title'] as String,
       categories: List<dynamic>.from((map['categories'] as List<dynamic>)),
-      description: map['description'] as String,
+      description: map['description'] as List<dynamic>,
       imagemUrl: map['image_url'] as String,
-      preparationTime: map['preparation_time'] as String,
       likes: map['likes'] as int,
-      type: List<dynamic>.from((map['type'] as List<dynamic>)),
       isFavorite: map['isFavorite'] as bool,
 
       // comments: List<TeaCommentsModel>.from(
@@ -67,4 +59,12 @@ class TeaModel {
 
   factory TeaModel.fromJson(String source) =>
       TeaModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  void favorite() {
+    isFavorite = true;
+  }
+
+  void unfavorite() {
+    isFavorite = false;
+  }
 }

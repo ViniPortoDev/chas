@@ -6,11 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class TeasLocalRepository implements ITeasRepository {
-   final teas = ValueNotifier(<TeaModel>[]);
+  final teas = ValueNotifier(<TeaModel>[]);
 
   Future<List<TeaModel>> getAllTeas() async {
-   
-    
     String teaListJson = await rootBundle.loadString('lib/src/mock/teas.json');
     final Map<String, dynamic> teaMap = jsonDecode(teaListJson);
     
@@ -18,7 +16,6 @@ class TeasLocalRepository implements ITeasRepository {
       final tea = TeaModel.fromMap(res);
       teas.value.add(tea);
     }
-    
     return teas.value;
   }
 
@@ -26,7 +23,4 @@ class TeasLocalRepository implements ITeasRepository {
   Future<List<TeaModel>> getTeaList() async {
     return await getAllTeas();
   }
-  
-
-
 }

@@ -132,7 +132,7 @@ class PrepareTeaView extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  tea.preparationTime,
+                  "tea.preparationTime",
                   style: const TextStyle(
                     fontSize: 14,
                     color: HexColors.white,
@@ -160,7 +160,7 @@ class PrepareTeaView extends StatelessWidget {
                   spacing: 8,
                   runSpacing: 8,
                   children: List.generate(
-                    tea.type.length,
+                    tea.categories.length,
                     (index) => IntrinsicWidth(
                       child: Container(
                         height: 25,
@@ -170,7 +170,7 @@ class PrepareTeaView extends StatelessWidget {
                             borderRadius: BorderRadius.circular(6)),
                         child: Center(
                           child: Text(
-                            tea.type[index],
+                            tea.categories[index],
                             style: const TextStyle(
                               fontSize: 14,
                               color: HexColors.white,

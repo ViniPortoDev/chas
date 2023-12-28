@@ -60,7 +60,9 @@ class _HomeViewState extends State<HomeView> {
                     const SizedBox(height: 20),
                     TeaSearchBarWidget(
                       onChanged: (value) {
-                        controller.getTeasTypeThat(value);
+                        // controller.getTeasTypeThat(value);
+                        // TODO: trocar função de add para função de chamar singular
+                        // bloc.inputTeas.add(FilterTeasEvent(filter: value));
                       },
                     ),
                     const SizedBox(height: 0),
@@ -141,13 +143,14 @@ class _HomeViewState extends State<HomeView> {
                             itemBuilder: (BuildContext context, int index) =>
                                 TeaBoxWidget(
                               title: teaList[index].title,
-                              description: teaList[index].description,
+                              description: "teaList[index].description",
                               teaImage: teaList[index].imagemUrl,
                               onTap: () => Navigator.pushNamed(
                                 context,
                                 Routes.infoTea,
                                 arguments: teaList[index],
                               ),
+                              onFavPressed: () => controller.favoriteTea(teaList[index]),
                             ),
                           );
                         }),
