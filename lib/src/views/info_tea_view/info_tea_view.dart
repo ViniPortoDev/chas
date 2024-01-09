@@ -22,9 +22,12 @@ class InfoTeaView extends StatelessWidget {
             SizedBox(
               height: 225,
               width: size.width,
-              child: Image.network(
-                tea.imagemUrl,
-                fit: BoxFit.cover,
+              child: Hero(
+                tag: 'tea ${tea.id}',
+                child: Image.network(
+                  tea.imagemUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(height: 40),
@@ -57,7 +60,8 @@ class InfoTeaView extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             InkWell(
-              onTap: () => Navigator.pushNamed(context, Routes.prepareTea, arguments: tea),
+              onTap: () => Navigator.pushNamed(context, Routes.prepareTea,
+                  arguments: tea),
               child: Container(
                 width: 230,
                 height: 40,

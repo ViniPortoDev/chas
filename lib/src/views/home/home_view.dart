@@ -143,6 +143,7 @@ class _HomeViewState extends State<HomeView> {
                               title: teaList[index].title,
                               description: teaList[index].description,
                               teaImage: teaList[index].imagemUrl,
+                              heroTag: 'tea ${teaList[index].id}',
                               onTap: () => Navigator.pushNamed(
                                 context,
                                 Routes.infoTea,

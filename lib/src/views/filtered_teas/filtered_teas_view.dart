@@ -43,9 +43,10 @@ class FilteredTeasView extends StatelessWidget {
                   Column(
                     children: List.generate(
                         3,
-                        (index) =>  TeaBoxWidget(
+                        (index) => TeaBoxWidget(
                             title: 'title',
                             description: 'description',
+                            heroTag: 'tea',
                             teaImage:
                                 'https://media.istockphoto.com/id/95574723/photo/english-tea-in-a-bone-china-cup.jpg?s=612x612&w=0&k=20&c=ZSdzzGzTz5d5SWXl3Lm5AdRNLWqDmXbmzaO5sqcHiFg=')),
                   )
