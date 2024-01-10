@@ -139,24 +139,28 @@ class _HomeViewState extends State<HomeView> {
                             itemCount: teaList.length,
                             physics: const NeverScrollableScrollPhysics(),
                             separatorBuilder: (context, index) =>
-                                const SizedBox(height: 12),
+                                const SizedBox(height: 25),
                             itemBuilder: (BuildContext context, int index) =>
                                 TeaBoxWidget(
                               title: teaList[index].title,
-                              description: "teaList[index].description",
+                              description: teaList[index].description[2]
+                                  ["value"],
                               teaImage: teaList[index].imagemUrl,
+                              heroTag: 'tea ${teaList[index].id}',
                               onTap: () => Navigator.pushNamed(
                                 context,
                                 Routes.infoTea,
                                 arguments: teaList[index],
                               ),
-                              onFavPressed: () => controller.favoriteTea(teaList[index]),
+                              onFavPressed: () =>
+                                  controller.favoriteTea(teaList[index]),
                             ),
                           );
                         }),
                   ],
                 ),
               ),
+              const SizedBox(height: 35)
             ],
           ),
         ),

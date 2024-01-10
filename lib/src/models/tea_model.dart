@@ -8,27 +8,30 @@ class TeaModel {
   final String title;
   final List<dynamic> categories;
   final List<dynamic> description;
+  final List<dynamic> preparation;
   final String imagemUrl;
   final int likes;
   bool isFavorite;
   // final List<TeaCommentsModel> comments;
 
-  TeaModel({
-    required this.id,
-    required this.title,
-    required this.categories,
-    required this.description,
-    required this.imagemUrl,
-    required this.likes,
-    this.isFavorite = false
-    // required this.comments,
-  });
- Map<String, dynamic> toMap() {
+  TeaModel(
+      {required this.id,
+      required this.title,
+      required this.categories,
+      required this.description,
+      required this.preparation,
+      required this.imagemUrl,
+      required this.likes,
+      this.isFavorite = false
+      // required this.comments,
+      });
+  Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'title': title,
       'categories': categories,
       'description': description,
+      'preparation': preparation,
       'imagemUrl': imagemUrl,
       'likes': likes,
       'isFavorite': isFavorite,
@@ -43,6 +46,7 @@ class TeaModel {
       title: map['title'] as String,
       categories: List<dynamic>.from((map['categories'] as List<dynamic>)),
       description: map['description'] as List<dynamic>,
+      preparation: map['preparation'] as List<dynamic>,
       imagemUrl: map['image_url'] as String,
       likes: map['likes'] as int,
       isFavorite: map['isFavorite'] as bool,

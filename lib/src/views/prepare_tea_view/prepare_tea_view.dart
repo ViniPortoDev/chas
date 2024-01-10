@@ -59,53 +59,54 @@ class PrepareTeaView extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                const Row(
+                Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.coffee,
                       color: HexColors.white,
                     ),
                     Text(
-                      ' Preparo:',
-                      style: TextStyle(
+                      "  ${tea.preparation[0]['label']}",
+                      style: const TextStyle(
                           fontSize: 14,
                           color: HexColors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                   ],
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  "  ${tea.description}",
+                  "  ${tea.preparation[0]['value']}",
                   style: const TextStyle(
                     fontSize: 14,
                     color: HexColors.white,
                   ),
                 ),
                 const SizedBox(height: 26),
-                const Row(
+                Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.eco,
                       color: HexColors.white,
                     ),
                     Text(
-                      ' Ingredientes:',
-                      style: TextStyle(
+                      "  ${tea.preparation[1]['label']}",
+                      style: const TextStyle(
                           fontSize: 14,
                           color: HexColors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                   ],
                 ),
                 const SizedBox(height: 12),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: List.generate(
                     2,
                     (index) => Text(
-                      '${index + 1}. Folhas de Erva-Cidreira',
+                      '${index + 1}.  ${tea.preparation[1]['value'][index]}',
                       style: const TextStyle(
                         fontSize: 14,
                         color: HexColors.white,
@@ -114,73 +115,55 @@ class PrepareTeaView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 26),
-                const Row(
+                Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.access_time_rounded,
                       color: HexColors.white,
                     ),
                     Text(
-                      ' Tempo de preparo:',
-                      style: TextStyle(
+                      "  ${tea.preparation[2]['label']}",
+                      style: const TextStyle(
                           fontSize: 14,
                           color: HexColors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                   ],
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  "tea.preparationTime",
+                  "  ${tea.preparation[2]['value']}",
                   style: const TextStyle(
                     fontSize: 14,
                     color: HexColors.white,
                   ),
                 ),
                 const SizedBox(height: 26),
-                const Row(
+                Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.diversity_2_outlined,
                       color: HexColors.white,
                     ),
                     Text(
-                      ' Categorias:',
-                      style: TextStyle(
+                      "  ${tea.preparation[3]['label']}",
+                      style: const TextStyle(
                           fontSize: 14,
                           color: HexColors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 8),
                   ],
                 ),
-                const SizedBox(height: 12),
-                Wrap(
-                  spacing: 8,
-                  runSpacing: 8,
-                  children: List.generate(
-                    tea.categories.length,
-                    (index) => IntrinsicWidth(
-                      child: Container(
-                        height: 25,
-                        padding: EdgeInsets.symmetric(horizontal: 12),
-                        decoration: BoxDecoration(
-                            color: _randomColor(),
-                            borderRadius: BorderRadius.circular(6)),
-                        child: Center(
-                          child: Text(
-                            tea.categories[index],
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: HexColors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                const SizedBox(height: 8),
+                Text(
+                  "  ${tea.preparation[3]['value']}",
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: HexColors.white,
                   ),
                 ),
+                const SizedBox(height: 12),
               ],
             ),
           ),

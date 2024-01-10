@@ -5,6 +5,8 @@ class TeaBoxWidget extends StatelessWidget {
   final String title;
   final String description;
   final String teaImage;
+  final String heroTag;
+
   ValueNotifier<bool> isFavorite;
 
   final void Function()? onTap;
@@ -15,6 +17,8 @@ class TeaBoxWidget extends StatelessWidget {
     required this.title,
     required this.description,
     required this.teaImage,
+    required this.heroTag,
+
     this.onTap,
     this.onFavPressed,
     bool isFav = false,
@@ -124,9 +128,12 @@ class TeaBoxWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Image.network(
-                teaImage,
-                fit: BoxFit.cover,
+              child: Hero(
+                tag: heroTag,
+                child: Image.network(
+                  teaImage,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
