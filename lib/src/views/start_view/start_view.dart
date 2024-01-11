@@ -10,21 +10,25 @@ class StartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: HexColors.background,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(height: 100),
-            Lottie.asset(
-              'lib/src/mock/drinking_tea.json',
-              fit: BoxFit.cover,
+            Container(
+              height: size.height * 0.6,
+              color: Colors.red,
+              child: Lottie.asset(
+                'lib/src/mock/drinking_tea.json',
+                fit: BoxFit.cover,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 50,
-                vertical: 60,
+                horizontal: 40,
               ),
               child: TeaButtonWidget(
                 title: 'Conheça Chás',
@@ -34,6 +38,7 @@ class StartView extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 0),
           ],
         ),
       ),

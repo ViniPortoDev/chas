@@ -52,25 +52,25 @@ class TeaUserbarWidget extends StatelessWidget {
             ),
           ],
         ),
-        Container(
-          decoration: const BoxDecoration(
-            color: HexColors.white,
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 5,
-                spreadRadius: -5,
-              ),
-            ],
-          ),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications_none_rounded,
-              size: 24,
-            ),
-          ),
-        )
+        // Container(
+        //   decoration: const BoxDecoration(
+        //     color: HexColors.white,
+        //     shape: BoxShape.circle,
+        //     boxShadow: [
+        //       BoxShadow(
+        //         blurRadius: 5,
+        //         spreadRadius: -5,
+        //       ),
+        //     ],
+        //   ),
+        //   child: IconButton(
+        //     onPressed: () {},
+        //     icon: const Icon(
+        //       Icons.notifications_none_rounded,
+        //       size: 24,
+        //     ),
+        //   ),
+        // )
       ],
     );
   }

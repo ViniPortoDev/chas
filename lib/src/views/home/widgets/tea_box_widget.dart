@@ -5,7 +5,6 @@ class TeaBoxWidget extends StatelessWidget {
   final String title;
   final String description;
   final String teaImage;
-  final String heroTag;
 
   ValueNotifier<bool> isFavorite;
 
@@ -17,8 +16,6 @@ class TeaBoxWidget extends StatelessWidget {
     required this.title,
     required this.description,
     required this.teaImage,
-    required this.heroTag,
-
     this.onTap,
     this.onFavPressed,
     bool isFav = false,
@@ -50,42 +47,44 @@ class TeaBoxWidget extends StatelessWidget {
               ],
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  // color: Colors.red,
-                  height: 90,
-                  width: size.width * 0.35,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                          color: HexColors.white,
-                        ),
+                Row(
+                  children: [
+                    const SizedBox(width: 150),
+                    SizedBox(
+                      width: size.width - 150 - 90,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            title,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                              color: HexColors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                            "  $description",
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                              color: HexColors.white,
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 6),
-                      Text(
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                        "  $description",
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          color: HexColors.white,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                const SizedBox(width: 12),
                 SizedBox(
                   height: 90,
                   child: Column(
@@ -106,7 +105,6 @@ class TeaBoxWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: 6),
               ],
             ),
           ),
@@ -128,12 +126,9 @@ class TeaBoxWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Hero(
-                tag: heroTag,
-                child: Image.network(
-                  teaImage,
-                  fit: BoxFit.cover,
-                ),
+              child: Image.network(
+                teaImage,
+                fit: BoxFit.cover,
               ),
             ),
           ),

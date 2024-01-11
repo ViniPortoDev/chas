@@ -65,7 +65,7 @@ class _HomeViewState extends State<HomeView> {
                         // bloc.inputTeas.add(FilterTeasEvent(filter: value));
                       },
                     ),
-                    const SizedBox(height: 0),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -103,7 +103,7 @@ class _HomeViewState extends State<HomeView> {
                 height: 120,
                 child: ListView.separated(
                   itemCount: controller.teaCategories.length,
-                  padding: const EdgeInsets.only(left: 12),
+                  padding: const EdgeInsets.only(left: 12, right: 12),
                   separatorBuilder: (BuildContext context, int index) =>
                       const SizedBox(width: 20),
                   scrollDirection: Axis.horizontal,
@@ -139,14 +139,13 @@ class _HomeViewState extends State<HomeView> {
                             itemCount: teaList.length,
                             physics: const NeverScrollableScrollPhysics(),
                             separatorBuilder: (context, index) =>
-                                const SizedBox(height: 25),
+                                const SizedBox(height: 20),
                             itemBuilder: (BuildContext context, int index) =>
                                 TeaBoxWidget(
                               title: teaList[index].title,
                               description: teaList[index].description[2]
                                   ["value"],
                               teaImage: teaList[index].imagemUrl,
-                              heroTag: 'tea ${teaList[index].id}',
                               onTap: () => Navigator.pushNamed(
                                 context,
                                 Routes.infoTea,
