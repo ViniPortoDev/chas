@@ -13,3 +13,8 @@ class TeasSuccessStates extends TeasStates {
   TeasSuccessStates({required List<TeaModel> teaList})
       : super(teaList: teaList);
 }
+
+class SearchState extends TeasStates {
+   SearchState({required List<TeaModel> filteredTeaList})
+      : super(teaList: filteredTeaList);
+}

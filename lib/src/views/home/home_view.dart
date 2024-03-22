@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:chas/src/blocs/teas_bloc.dart';
 import 'package:chas/src/blocs/teas_event.dart';
 import 'package:chas/src/blocs/teas_states.dart';
@@ -7,13 +8,12 @@ import 'package:chas/src/controller/teas_controller.dart';
 import 'package:chas/src/views/home/widgets/tea_box_category_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_box_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_userbar_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:chas/src/views/home/widgets/tea_search_bar_widget.dart';
 
 import '../../routes/routes.dart';
-import 'widgets/tea_search_bar_widget.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -60,7 +60,7 @@ class _HomeViewState extends State<HomeView> {
                     const SizedBox(height: 20),
                     TeaSearchBarWidget(
                       onChanged: (value) {
-                        controller.getTeasTypeThat(value);
+                        bloc.inputTeas.add(SearchTeasEvent(query: value));
                       },
                     ),
                     const SizedBox(height: 0),
@@ -75,10 +75,11 @@ class _HomeViewState extends State<HomeView> {
                           ),
                         ),
                         TextButton(
-                          style: const ButtonStyle(
+                          style: ButtonStyle(
                             padding:
-                                MaterialStatePropertyAll<EdgeInsetsGeometry?>(
-                                    EdgeInsets.zero),
+                                MaterialStateProperty.all<EdgeInsetsGeometry>(
+                              EdgeInsets.zero,
+                            ),
                           ),
                           onPressed: () =>
                               Navigator.pushNamed(context, Routes.categories),
@@ -129,29 +130,38 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     const SizedBox(height: 12),
                     StreamBuilder<TeasStates>(
-                        stream: bloc.stream,
-                        builder: (context, snapshot) {
-                          final teaList = snapshot.data?.teaList ?? [];
-                          return ListView.separated(
-                            shrinkWrap: true,
-                            itemCount: teaList.length,
-                            physics: const NeverScrollableScrollPhysics(),
-                            separatorBuilder: (context, index) =>
-                                const SizedBox(height: 12),
-                            itemBuilder: (BuildContext context, int index) =>
-                                TeaBoxWidget(
-                              title: teaList[index].title,
-                              description: teaList[index].description,
-                              teaImage: teaList[index].imagemUrl,
-                              heroTag: 'tea ${teaList[index].id}',
-                              onTap: () => Navigator.pushNamed(
-                                context,
-                                Routes.infoTea,
-                                arguments: teaList[index],
+                      stream: bloc.stream,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          final state = snapshot.data!;
+                          if (state is TeasInitialState) {
+                            return Center(child: CircularProgressIndicator());
+                          } else if (state is TeasSuccessStates) {
+                            final teaList = state.teaList;
+                            return ListView.separated(
+                              shrinkWrap: true,
+                              itemCount: teaList.length,
+                              physics: const NeverScrollableScrollPhysics(),
+                              separatorBuilder: (context, index) =>
+                                  const SizedBox(height: 12),
+                              itemBuilder: (BuildContext context, int index) =>
+                                  TeaBoxWidget(
+                                title: teaList[index].title,
+                                description: teaList[index].description,
+                                teaImage: teaList[index].imagemUrl,
+                                heroTag: 'tea ${teaList[index].id}',
+                                onTap: () => Navigator.pushNamed(
+                                  context,
+                                  Routes.infoTea,
+                                  arguments: teaList[index],
+                                ),
                               ),
-                            ),
-                          );
-                        }),
+                            );
+                          }
+                        }
+                        return Container(); // Tratar outros casos, se necessário
+                      },
+                    ),
                   ],
                 ),
               ),

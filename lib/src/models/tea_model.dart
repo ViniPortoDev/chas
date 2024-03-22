@@ -12,22 +12,22 @@ class TeaModel {
   final String preparationTime;
   final int likes;
   final List<dynamic> type;
-   final bool isFavorite;
+  final bool isFavorite;
   // final List<TeaCommentsModel> comments;
 
-  TeaModel({
-    required this.id,
-    required this.title,
-    required this.categories,
-    required this.description,
-    required this.imagemUrl,
-    required this.preparationTime,
-    required this.likes,
-    required this.type,
-     this.isFavorite = false
-    // required this.comments,
-  });
- Map<String, dynamic> toMap() {
+  TeaModel(
+      {required this.id,
+      required this.title,
+      required this.categories,
+      required this.description,
+      required this.imagemUrl,
+      required this.preparationTime,
+      required this.likes,
+      required this.type,
+      this.isFavorite = false
+      // required this.comments,
+      });
+  Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'title': title,

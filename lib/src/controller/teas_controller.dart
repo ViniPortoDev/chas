@@ -6,6 +6,8 @@ class TeasController {
   final ITeasRepository repository;
   TeasController({required this.repository});
 
+  List<TeaModel> teas = [];
+
   final List<TeaCategoriesModel> teaCategories = [
     TeaCategoriesModel(
       title: 'Medicinais',
@@ -93,16 +95,19 @@ class TeasController {
     ),
   ];
 
-  Future<List<TeaModel>> getTeaList() async {
-    final teaList = await repository.getTeaList();
-    return teaList;
-  }
+  // Future<List<TeaModel>> getTeaList() async {
+  //   var teaList = await repository.getTeaList();
+  //   teas.addAll(teaList);
+  //   return teaList;
+  // }
 
-    Future<List<TeaModel>> getTeasTypeThat(String filter) async {
-    // fetch all teas
-    List<TeaModel> teas = await getTeaList();
-    // filter in all teas
-    List<TeaModel> outputList = teas.where((tea) => tea.type.contains(filter)).toList();
-    return outputList;
-  }
+  // Future<List<TeaModel>> getTeasTypeThat(String filter) async {
+  //   // fetch all teas
+
+  //   print(teas.length);
+  //   // filter in all teas
+  //   List<TeaModel> outputList =
+  //       teas.where((tea) => tea.type.contains(filter)).toList();
+  //   return outputList;
+  // }
 }

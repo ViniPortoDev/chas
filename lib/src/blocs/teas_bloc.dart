@@ -24,6 +24,10 @@ class TeasBloc {
     List<TeaModel> teaList = [];
     if (event is LoadTeasEvent) {
       teaList = await localRepository.getAllTeas();
+    } else if (event is SearchTeasEvent) {
+      final searchResults = await localRepository.searchTeas(event.query);
+      _outputController.add(TeasSuccessStates(teaList: searchResults));
+      teaList = searchResults;
     }
     _outputController.add(TeasSuccessStates(teaList: teaList));
   }
