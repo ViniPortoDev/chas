@@ -9,6 +9,7 @@ import 'package:chas/src/views/home/widgets/tea_box_category_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_box_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_userbar_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_search_bar_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../routes/routes.dart';
 
@@ -26,12 +27,12 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     bloc = TeasBloc();
-    bloc.inputTeas.add(LoadTeasEvent());
+    bloc.add(LoadTeasEvent());
   }
 
   @override
   void dispose() {
-    bloc.inputTeas.close();
+    bloc.close();
     super.dispose();
   }
 
@@ -60,7 +61,7 @@ class _HomeViewState extends State<HomeView> {
                     const SizedBox(height: 20),
                     TeaSearchBarWidget(
                       onChanged: (value) {
-                        bloc.inputTeas.add(SearchTeasEvent(query: value));
+                        bloc.add(SearchTeasEvent(query: value));
                       },
                     ),
                     const SizedBox(height: 0),
@@ -129,37 +130,35 @@ class _HomeViewState extends State<HomeView> {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    StreamBuilder<TeasStates>(
-                      stream: bloc.stream,
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          final state = snapshot.data!;
-                          if (state is TeasInitialState) {
-                            return Center(child: CircularProgressIndicator());
-                          } else if (state is TeasSuccessStates) {
-                            final teaList = state.teaList;
-                            return ListView.separated(
-                              shrinkWrap: true,
-                              itemCount: teaList.length,
-                              physics: const NeverScrollableScrollPhysics(),
-                              separatorBuilder: (context, index) =>
-                                  const SizedBox(height: 12),
-                              itemBuilder: (BuildContext context, int index) =>
-                                  TeaBoxWidget(
-                                title: teaList[index].title,
-                                description: teaList[index].description,
-                                teaImage: teaList[index].imagemUrl,
-                                heroTag: 'tea ${teaList[index].id}',
-                                onTap: () => Navigator.pushNamed(
-                                  context,
-                                  Routes.infoTea,
-                                  arguments: teaList[index],
-                                ),
+                    BlocBuilder<TeasBloc, TeasStates>(
+                      bloc: bloc,
+                      builder: (context, state) {
+                        if (state is TeasInitialState) {
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        } else if (state is TeasSuccessStates) {
+                          final teaList = state.teaList;
+                          return ListView.separated(
+                            shrinkWrap: true,
+                            itemCount: teaList.length,
+                            physics: const NeverScrollableScrollPhysics(),
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(height: 12),
+                            itemBuilder: (BuildContext context, int index) =>
+                                TeaBoxWidget(
+                              title: teaList[index].title,
+                              description: teaList[index].description,
+                              teaImage: teaList[index].imagemUrl,
+                              heroTag: 'tea ${teaList[index].id}',
+                              onTap: () => Navigator.pushNamed(
+                                context,
+                                Routes.infoTea,
+                                arguments: teaList[index],
                               ),
-                            );
-                          }
+                            ),
+                          );
                         }
-                        return Container(); // Tratar outros casos, se necessário
+                        return Container();
                       },
                     ),
                   ],

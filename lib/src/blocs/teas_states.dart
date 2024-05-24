@@ -1,20 +1,18 @@
 import 'package:chas/src/models/tea_model.dart';
 
-abstract class TeasStates {
-  List<TeaModel> teaList;
-  TeasStates({required this.teaList});
-}
+abstract class TeasStates {}
 
-class TeasInitialState extends TeasStates {
-  TeasInitialState() : super(teaList: []);
-}
+class TeasInitialState extends TeasStates {}
+
+class LoadingTeasState extends TeasStates {}
 
 class TeasSuccessStates extends TeasStates {
-  TeasSuccessStates({required List<TeaModel> teaList})
-      : super(teaList: teaList);
+  final List<TeaModel> teaList;
+  TeasSuccessStates({required this.teaList});
 }
 
 class SearchState extends TeasStates {
-   SearchState({required List<TeaModel> filteredTeaList})
-      : super(teaList: filteredTeaList);
+  final List<TeaModel> filteredTeaList;
+
+  SearchState({required this.filteredTeaList});
 }
