@@ -11,8 +11,7 @@ class TeasSuccessStates extends TeasStates {
   TeasSuccessStates({required this.teaList});
 }
 
-class SearchState extends TeasStates {
-  final List<TeaModel> filteredTeaList;
-
-  SearchState({required this.filteredTeaList});
+class TeasErrorState extends TeasStates {
+  final String error;
+  TeasErrorState({required this.error});
 }

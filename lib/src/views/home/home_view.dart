@@ -21,19 +21,10 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  late final TeasBloc bloc;
-
   @override
   void initState() {
     super.initState();
-    bloc = TeasBloc();
-    bloc.add(LoadTeasEvent());
-  }
-
-  @override
-  void dispose() {
-    bloc.close();
-    super.dispose();
+    BlocProvider.of<TeasBloc>(context).add(LoadTeasEvent());
   }
 
   final controller = TeasController(repository: TeasLocalRepository());
@@ -61,7 +52,8 @@ class _HomeViewState extends State<HomeView> {
                     const SizedBox(height: 20),
                     TeaSearchBarWidget(
                       onChanged: (value) {
-                        bloc.add(SearchTeasEvent(query: value));
+                        BlocProvider.of<TeasBloc>(context)
+                            .add(SearchTeasEvent(query: value));
                       },
                     ),
                     const SizedBox(height: 0),
@@ -131,32 +123,34 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     const SizedBox(height: 12),
                     BlocBuilder<TeasBloc, TeasStates>(
-                      bloc: bloc,
                       builder: (context, state) {
-                        if (state is TeasInitialState) {
-                          return const Center(
-                              child: CircularProgressIndicator());
-                        } else if (state is TeasSuccessStates) {
+                        if (state is LoadingTeasState) {
+                          return Center(child: CircularProgressIndicator());
+                        }
+                        if (state is TeasSuccessStates) {
                           final teaList = state.teaList;
-                          return ListView.separated(
-                            shrinkWrap: true,
-                            itemCount: teaList.length,
-                            physics: const NeverScrollableScrollPhysics(),
-                            separatorBuilder: (context, index) =>
-                                const SizedBox(height: 12),
-                            itemBuilder: (BuildContext context, int index) =>
-                                TeaBoxWidget(
-                              title: teaList[index].title,
-                              description: teaList[index].description,
-                              teaImage: teaList[index].imagemUrl,
-                              heroTag: 'tea ${teaList[index].id}',
-                              onTap: () => Navigator.pushNamed(
-                                context,
-                                Routes.infoTea,
-                                arguments: teaList[index],
-                              ),
-                            ),
-                          );
+                          return teaList.isEmpty
+                              ? const Text('Não encontramos esse chá!')
+                              : ListView.separated(
+                                  shrinkWrap: true,
+                                  itemCount: teaList.length,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  separatorBuilder: (context, index) =>
+                                      const SizedBox(height: 12),
+                                  itemBuilder:
+                                      (BuildContext context, int index) =>
+                                          TeaBoxWidget(
+                                    title: teaList[index].title,
+                                    description: teaList[index].description,
+                                    teaImage: teaList[index].imagemUrl,
+                                    heroTag: 'tea ${teaList[index].id}',
+                                    onTap: () => Navigator.pushNamed(
+                                      context,
+                                      Routes.infoTea,
+                                      arguments: teaList[index],
+                                    ),
+                                  ),
+                                );
                         }
                         return Container();
                       },

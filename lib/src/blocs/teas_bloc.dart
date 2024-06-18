@@ -19,11 +19,23 @@ class TeasBloc extends Bloc<TeasEvent, TeasStates> {
 
   TeasBloc() : super(TeasInitialState()) {
     on<LoadTeasEvent>((event, emit) async {
-      emit(TeasSuccessStates(teaList: await _localRepository.getAllTeas()));
+      emit(LoadingTeasState());
+      await Future.delayed(const Duration(seconds: 200));
+      try {
+        emit(TeasSuccessStates(teaList: await _localRepository.getAllTeas()));
+      } catch (e) {
+        emit(TeasErrorState(error: e.toString()));
+      }
     });
     on<SearchTeasEvent>((event, emit) async {
-      emit(TeasSuccessStates(
-          teaList: await _localRepository.searchTeas(event.query)));
+      emit(LoadingTeasState());
+      await Future.delayed(const Duration(milliseconds: 800));
+      try {
+        emit(TeasSuccessStates(
+            teaList: await _localRepository.searchTeas(event.query)));
+      } catch (e) {
+        emit(TeasErrorState(error: e.toString()));
+      }
     });
   }
 
