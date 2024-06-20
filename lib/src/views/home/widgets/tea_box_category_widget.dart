@@ -27,11 +27,15 @@ class TeaBoxCategoryWidget extends StatelessWidget {
             width: size ?? 80,
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
+              border: Border.all(),
               borderRadius: BorderRadius.circular(12),
-            ),
-            child: Image.network(
-              teaPhoto,
-              fit: BoxFit.cover,
+              image: DecorationImage(
+                isAntiAlias: true,
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                  teaPhoto,
+                ),
+              ),
             ),
           ),
         ),

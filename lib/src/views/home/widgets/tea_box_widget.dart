@@ -16,7 +16,6 @@ class TeaBoxWidget extends StatelessWidget {
     required this.description,
     required this.teaImage,
     required this.heroTag,
-
     this.onTap,
     bool isFav = false,
   }) : isFavorite = ValueNotifier(isFav);
@@ -36,6 +35,7 @@ class TeaBoxWidget extends StatelessWidget {
             height: 100,
             decoration: BoxDecoration(
               color: HexColors.primary,
+              border: Border.all(),
               borderRadius: BorderRadius.circular(12),
               boxShadow: const [
                 BoxShadow(
@@ -112,26 +112,27 @@ class TeaBoxWidget extends StatelessWidget {
           Positioned(
             left: 10,
             top: 10,
-            child: Container(
-              height: 100,
-              width: 130,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: const [
-                  BoxShadow(
-                    blurRadius: 5,
-                    offset: Offset(1, 10),
-                    spreadRadius: -2,
-                    color: Colors.grey,
+            child: Hero(
+              tag: heroTag,
+              child: Container(
+                height: 100,
+                width: 130,
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: const [
+                    BoxShadow(
+                      blurRadius: 5,
+                      offset: Offset(1, 10),
+                      spreadRadius: -2,
+                      color: Colors.grey,
+                    ),
+                  ],
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(teaImage),
                   ),
-                ],
-              ),
-              child: Hero(
-                tag: heroTag,
-                child: Image.network(
-                  teaImage,
-                  fit: BoxFit.cover,
                 ),
               ),
             ),
