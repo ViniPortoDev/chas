@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:chas/src/blocs/teas_bloc.dart';
 import 'package:chas/src/blocs/teas_event.dart';
@@ -9,6 +10,7 @@ import 'package:chas/src/views/home/widgets/tea_box_category_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_box_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_userbar_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_search_bar_widget.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../routes/routes.dart';
@@ -34,131 +36,165 @@ class _HomeViewState extends State<HomeView> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xffececdc),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 12,
-                  left: 12,
-                  right: 12,
-                ),
-                child: Column(
-                  children: [
-                    const TeaUserbarWidget(
-                      userName: 'Vinicius',
-                    ),
-                    const SizedBox(height: 20),
-                    TeaSearchBarWidget(
-                      onChanged: (value) {
-                        BlocProvider.of<TeasBloc>(context)
-                            .add(SearchTeasEvent(query: value));
-                      },
-                    ),
-                    const SizedBox(height: 0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Categorias',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        TextButton(
-                          style: ButtonStyle(
-                            padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                              EdgeInsets.zero,
-                            ),
-                          ),
-                          onPressed: () =>
-                              Navigator.pushNamed(context, Routes.categories),
-                          child: const Text(
-                            'Ver tudo',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 120,
-                child: ListView.separated(
-                  itemCount: controller.teaCategories.length,
-                  padding: const EdgeInsets.only(left: 12),
-                  separatorBuilder: (BuildContext context, int index) =>
-                      const SizedBox(width: 20),
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContext context, int index) {
-                    return TeaBoxCategoryWidget(
-                      teaTitle: controller.teaCategories[index].title,
-                      teaPhoto: controller.teaCategories[index].imageUrl,
-                      onTap: () =>
-                          Navigator.pushNamed(context, Routes.filteredTeas),
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Medicinais',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/background.jpg'),
+                fit: BoxFit.cover,
+                opacity: 0.1),
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 12,
+                    left: 12,
+                    right: 12,
+                  ),
+                  child: Column(
+                    children: [
+                      const TeaUserbarWidget(
+                        userName: 'Vinicius',
                       ),
-                    ),
-                    const SizedBox(height: 12),
-                    BlocBuilder<TeasBloc, TeasStates>(
-                      builder: (context, state) {
-                        if (state is LoadingTeasState) {
-                          return Center(child: CircularProgressIndicator());
-                        }
-                        if (state is TeasSuccessStates) {
-                          final teaList = state.teaList;
-                          return teaList.isEmpty
-                              ? const Text('Não encontramos esse chá!')
-                              : ListView.separated(
-                                  shrinkWrap: true,
-                                  itemCount: teaList.length,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  separatorBuilder: (context, index) =>
-                                      const SizedBox(height: 12),
-                                  itemBuilder:
-                                      (BuildContext context, int index) =>
-                                          TeaBoxWidget(
-                                    title: teaList[index].title,
-                                    description: teaList[index].description,
-                                    teaImage: teaList[index].imagemUrl,
-                                    heroTag: 'tea ${teaList[index].id}',
-                                    onTap: () => Navigator.pushNamed(
-                                      context,
-                                      Routes.infoTea,
-                                      arguments: teaList[index],
-                                    ),
-                                  ),
-                                );
-                        }
-                        return Container();
-                      },
-                    ),
-                  ],
+                      const SizedBox(height: 20),
+                      TeaSearchBarWidget(
+                        onChanged: (value) {
+                          BlocProvider.of<TeasBloc>(context)
+                              .add(SearchTeasEvent(query: value));
+                        },
+                      ),
+                      const SizedBox(height: 0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            'Categorias',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          TextButton(
+                            style: ButtonStyle(
+                              padding:
+                                  MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                EdgeInsets.zero,
+                              ),
+                            ),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, Routes.categories),
+                            child: const Text(
+                              'Ver tudo',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: 120,
+                  child: ListView.separated(
+                    itemCount: controller.teaCategories.length,
+                    padding: const EdgeInsets.only(left: 12),
+                    separatorBuilder: (BuildContext context, int index) =>
+                        const SizedBox(width: 20),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return TeaBoxCategoryWidget(
+                        teaTitle: controller.teaCategories[index].title,
+                        teaPhoto: controller.teaCategories[index].imageUrl,
+                        onTap: () =>
+                            Navigator.pushNamed(context, Routes.filteredTeas),
+                      );
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Medicinais',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      BlocBuilder<TeasBloc, TeasStates>(
+                        builder: (context, state) {
+                          if (state is LoadingTeasState) {
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.15),
+                                const CircularProgressIndicator(),
+                              ],
+                            );
+                          }
+                          if (state is TeasSuccessStates) {
+                            final teaList = state.teaList;
+                            return teaList.isEmpty
+                                ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.15),
+                                      const Text('Nenhum chá correspondente!')
+                                    ],
+                                  )
+                                : ListView.separated(
+                                    shrinkWrap: true,
+                                    itemCount: teaList.length,
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    separatorBuilder: (context, index) =>
+                                        const SizedBox(height: 12),
+                                    itemBuilder:
+                                        (BuildContext context, int index) =>
+                                            TeaBoxWidget(
+                                      title: teaList[index].title,
+                                      description: teaList[index].description,
+                                      teaImage: teaList[index].imagemUrl,
+                                      heroTag: 'tea ${teaList[index].id}',
+                                      onTap: () => Navigator.pushNamed(
+                                        context,
+                                        Routes.infoTea,
+                                        arguments: teaList[index],
+                                      ),
+                                    ),
+                                  );
+                          }
+                          return Container();
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
