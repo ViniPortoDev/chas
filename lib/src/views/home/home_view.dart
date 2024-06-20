@@ -100,23 +100,43 @@ class _HomeViewState extends State<HomeView> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 120,
-                  child: ListView.separated(
-                    itemCount: controller.teaCategories.length,
-                    padding: const EdgeInsets.only(left: 12),
-                    separatorBuilder: (BuildContext context, int index) =>
-                        const SizedBox(width: 20),
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (BuildContext context, int index) {
-                      return TeaBoxCategoryWidget(
-                        teaTitle: controller.teaCategories[index].title,
-                        teaPhoto: controller.teaCategories[index].imageUrl,
-                        onTap: () =>
-                            Navigator.pushNamed(context, Routes.filteredTeas),
+                BlocBuilder<TeasBloc, TeasStates>(
+                  builder: (context, state) {
+                    if (state is LoadingTeasState) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    if (state is TeasSuccessStates) {
+                      return SizedBox(
+                        height: 120,
+                        child: ListView.separated(
+                          itemCount: controller.teaCategories.length,
+                          padding: const EdgeInsets.only(left: 12),
+                          separatorBuilder: (BuildContext context, int index) =>
+                              const SizedBox(width: 20),
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, int index) {
+                            return TeaBoxCategoryWidget(
+                                teaTitle: controller.teaCategories[index].title,
+                                teaPhoto:
+                                    controller.teaCategories[index].imageUrl,
+                                onTap: () {
+                                  final teaList = state.teaList;
+
+                                  final listFiteredTeas =
+                                      controller.teasPerCategory(
+                                          teaList,
+                                          controller
+                                              .teaCategories[index].title);
+                                  Navigator.pushNamed(
+                                      context, Routes.filteredTeas,
+                                      arguments: listFiteredTeas);
+                                });
+                          },
+                        ),
                       );
-                    },
-                  ),
+                    }
+                    return Container();
+                  },
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -174,11 +194,12 @@ class _HomeViewState extends State<HomeView> {
                                         const SizedBox(height: 12),
                                     itemBuilder:
                                         (BuildContext context, int index) =>
+                                            // tag: 'tea ${teaList[index].id}',
+
                                             TeaBoxWidget(
                                       title: teaList[index].title,
                                       description: teaList[index].description,
                                       teaImage: teaList[index].imagemUrl,
-                                      heroTag: 'tea ${teaList[index].id}',
                                       onTap: () => Navigator.pushNamed(
                                         context,
                                         Routes.infoTea,

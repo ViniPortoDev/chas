@@ -1,4 +1,6 @@
+import 'package:chas/src/models/tea_model.dart';
 import 'package:chas/src/repositories/teas_local_repository.dart';
+import 'package:chas/src/routes/routes.dart';
 import 'package:chas/src/utils/hex_colors.dart';
 import 'package:chas/src/views/home/widgets/tea_box_category_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_search_bar_widget.dart';
@@ -51,6 +53,18 @@ class CategoriesView extends StatelessWidget {
                         (index) => TeaBoxCategoryWidget(
                           teaTitle: controller.teaCategories[index].title,
                           teaPhoto: controller.teaCategories[index].imageUrl,
+                          // onTap: () {
+                          //         final teaList = state.teaList;
+
+                          //         final listFiteredTeas =
+                          //             controller.teasPerCategory(
+                          //                 teaList,
+                          //                 controller
+                          //                     .teaCategories[index].title);
+                          //         Navigator.pushNamed(
+                          //             context, Routes.filteredTeas,
+                          //             arguments: listFiteredTeas);
+                          //       }
                           size: 100,
                         ),
                       ),

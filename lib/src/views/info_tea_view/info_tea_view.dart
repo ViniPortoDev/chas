@@ -22,12 +22,9 @@ class InfoTeaView extends StatelessWidget {
             SizedBox(
               height: 225,
               width: size.width,
-              child: Hero(
-                tag: 'tea ${tea.id}',
-                child: Image.network(
-                  tea.imagemUrl,
-                  fit: BoxFit.cover,
-                ),
+              child: Image.network(
+                tea.imagemUrl,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(height: 40),
@@ -40,7 +37,7 @@ class InfoTeaView extends StatelessWidget {
               ),
             ),
             Text(
-              tea.categories.toString(),
+              tea.type.join(', '),
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,

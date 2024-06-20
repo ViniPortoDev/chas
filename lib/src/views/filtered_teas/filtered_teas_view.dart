@@ -1,3 +1,4 @@
+import 'package:chas/src/models/tea_model.dart';
 import 'package:chas/src/repositories/teas_local_repository.dart';
 import 'package:chas/src/utils/hex_colors.dart';
 import 'package:chas/src/views/home/widgets/tea_box_category_widget.dart';
@@ -14,6 +15,8 @@ class FilteredTeasView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<TeaModel> teaListFiltered =
+        ModalRoute.of(context)?.settings.arguments as List<TeaModel>;
     final size = MediaQuery.of(context).size;
 
     return SafeArea(
@@ -42,13 +45,12 @@ class FilteredTeasView extends StatelessWidget {
                   const SizedBox(height: 40),
                   Column(
                     children: List.generate(
-                        3,
-                        (index) => TeaBoxWidget(
-                            title: 'title',
-                            description: 'description',
-                            heroTag: 'tea',
-                            teaImage:
-                                'https://media.istockphoto.com/id/95574723/photo/english-tea-in-a-bone-china-cup.jpg?s=612x612&w=0&k=20&c=ZSdzzGzTz5d5SWXl3Lm5AdRNLWqDmXbmzaO5sqcHiFg=')),
+                      teaListFiltered.length,
+                      (index) => TeaBoxWidget(
+                          title: teaListFiltered[index].title,
+                          description: teaListFiltered[index].description,
+                          teaImage: teaListFiltered[index].imagemUrl),
+                    ),
                   )
                 ],
               ),

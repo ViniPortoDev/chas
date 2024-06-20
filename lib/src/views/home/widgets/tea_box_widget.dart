@@ -5,7 +5,7 @@ class TeaBoxWidget extends StatelessWidget {
   final String title;
   final String description;
   final String teaImage;
-  final String heroTag;
+ 
 
   ValueNotifier<bool> isFavorite;
 
@@ -15,7 +15,7 @@ class TeaBoxWidget extends StatelessWidget {
     required this.title,
     required this.description,
     required this.teaImage,
-    required this.heroTag,
+
     this.onTap,
     bool isFav = false,
   }) : isFavorite = ValueNotifier(isFav);
@@ -112,27 +112,24 @@ class TeaBoxWidget extends StatelessWidget {
           Positioned(
             left: 10,
             top: 10,
-            child: Hero(
-              tag: heroTag,
-              child: Container(
-                height: 100,
-                width: 130,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 5,
-                      offset: Offset(1, 10),
-                      spreadRadius: -2,
-                      color: Colors.grey,
-                    ),
-                  ],
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(teaImage),
+            child: Container(
+              height: 100,
+              width: 130,
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                border: Border.all(),
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: const [
+                  BoxShadow(
+                    blurRadius: 5,
+                    offset: Offset(1, 10),
+                    spreadRadius: -2,
+                    color: Colors.grey,
                   ),
+                ],
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(teaImage),
                 ),
               ),
             ),
