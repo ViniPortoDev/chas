@@ -6,6 +6,17 @@ class TeasController {
   final ITeasRepository repository;
   TeasController({required this.repository});
 
+  List<TeaModel> teasPerCategory(List<TeaModel> teaList, String category) {
+    List<TeaModel> listFiteredTeas = [];
+
+    for (var tea in teaList) {
+      if (tea.categories.contains(category)) {
+        listFiteredTeas.add(tea);
+      }
+    }
+    return listFiteredTeas;
+  }
+
   List<TeaModel> teas = [];
 
   final List<TeaCategoriesModel> teaCategories = [
