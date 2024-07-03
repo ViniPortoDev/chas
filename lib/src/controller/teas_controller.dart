@@ -6,18 +6,20 @@ class TeasController {
   final ITeasRepository repository;
   TeasController({required this.repository});
 
-  List<TeaModel> teasPerCategory(List<TeaModel> teaList, String category) {
-    List<TeaModel> listFiteredTeas = [];
+  List<TeaModel> listTeas = [];
 
-    for (var tea in teaList) {
-      if (tea.categories.contains(category)) {
-        listFiteredTeas.add(tea);
-      }
-    }
-    return listFiteredTeas;
-  }
+  // Future<List<TeaModel>> teasPerCategory(String category) async {
+  //   List<TeaModel> listFiteredTeas = [];
 
-  List<TeaModel> teas = [];
+   
+
+  //   for (var tea in listTeas) {
+  //     if (tea.categories.contains(category)) {
+  //       listFiteredTeas.add(tea);
+  //     }
+  //   }
+  //   return listFiteredTeas;
+  // }
 
   final List<TeaCategoriesModel> teaCategories = [
     TeaCategoriesModel(

@@ -76,11 +76,16 @@ class PrepareTeaView extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                Text(
-                  "  ${tea.description}",
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: HexColors.white,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.2,
+                  child: SingleChildScrollView(
+                    child: Text(
+                      "  ${tea.description}",
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: HexColors.white,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 26),
@@ -181,6 +186,7 @@ class PrepareTeaView extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 26),
               ],
             ),
           ),

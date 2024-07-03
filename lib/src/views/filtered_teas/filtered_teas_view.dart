@@ -1,3 +1,7 @@
+import 'package:chas/providers.dart';
+import 'package:chas/src/blocs/teas_bloc.dart';
+import 'package:chas/src/blocs/teas_event.dart';
+import 'package:chas/src/blocs/teas_states.dart';
 import 'package:chas/src/models/tea_model.dart';
 import 'package:chas/src/repositories/teas_local_repository.dart';
 import 'package:chas/src/utils/hex_colors.dart';
@@ -6,17 +10,24 @@ import 'package:chas/src/views/home/widgets/tea_box_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_search_bar_widget.dart';
 import 'package:chas/src/views/home/widgets/tea_userbar_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../controller/teas_controller.dart';
 
-class FilteredTeasView extends StatelessWidget {
-  FilteredTeasView({super.key});
-  final controller = TeasController(repository: TeasLocalRepository());
+class FilteredTeasView extends StatefulWidget {
+const  FilteredTeasView({super.key});
+
+  @override
+  State<FilteredTeasView> createState() => _FilteredTeasViewState();
+}
+
+class _FilteredTeasViewState extends State<FilteredTeasView> {
+  final controller = getIt<TeasController>();
 
   @override
   Widget build(BuildContext context) {
-    final List<TeaModel> teaListFiltered =
-        ModalRoute.of(context)?.settings.arguments as List<TeaModel>;
+    // final List<TeaModel> teaListFiltered =
+    //     ModalRoute.of(context)?.settings.arguments as List<TeaModel>;
     final size = MediaQuery.of(context).size;
 
     return SafeArea(
@@ -43,14 +54,21 @@ class FilteredTeasView extends StatelessWidget {
                 children: [
                   const TeaSearchBarWidget(),
                   const SizedBox(height: 40),
-                  Column(
-                    children: List.generate(
-                      teaListFiltered.length,
-                      (index) => TeaBoxWidget(
-                          title: teaListFiltered[index].title,
-                          description: teaListFiltered[index].description,
-                          teaImage: teaListFiltered[index].imagemUrl),
-                    ),
+                  BlocBuilder<TeasBloc, TeasStates>(
+                    builder: (context, state) {
+                      if (state is TeasSuccessStates) {
+                        return Column(
+                          children: List.generate(
+                            state.teaList.length,
+                            (index) => TeaBoxWidget(
+                                title: state.teaList[index].title,
+                                description: state.teaList[index].description,
+                                teaImage: state.teaList[index].imagemUrl),
+                          ),
+                        );
+                      }
+                      return Container();
+                    },
                   )
                 ],
               ),

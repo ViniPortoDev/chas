@@ -1,3 +1,4 @@
+import 'package:chas/providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:chas/src/blocs/teas_bloc.dart';
@@ -29,7 +30,7 @@ class _HomeViewState extends State<HomeView> {
     BlocProvider.of<TeasBloc>(context).add(LoadTeasEvent());
   }
 
-  final controller = TeasController(repository: TeasLocalRepository());
+  final controller = getIt<TeasController>();
 
   @override
   Widget build(BuildContext context) {
@@ -100,43 +101,30 @@ class _HomeViewState extends State<HomeView> {
                     ],
                   ),
                 ),
-                BlocBuilder<TeasBloc, TeasStates>(
-                  builder: (context, state) {
-                    if (state is LoadingTeasState) {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                    if (state is TeasSuccessStates) {
-                      return SizedBox(
-                        height: 120,
-                        child: ListView.separated(
-                          itemCount: controller.teaCategories.length,
-                          padding: const EdgeInsets.only(left: 12),
-                          separatorBuilder: (BuildContext context, int index) =>
-                              const SizedBox(width: 20),
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (BuildContext context, int index) {
-                            return TeaBoxCategoryWidget(
-                                teaTitle: controller.teaCategories[index].title,
-                                teaPhoto:
-                                    controller.teaCategories[index].imageUrl,
-                                onTap: () {
-                                  final teaList = state.teaList;
-
-                                  final listFiteredTeas =
-                                      controller.teasPerCategory(
-                                          teaList,
-                                          controller
-                                              .teaCategories[index].title);
-                                  Navigator.pushNamed(
-                                      context, Routes.filteredTeas,
-                                      arguments: listFiteredTeas);
-                                });
-                          },
-                        ),
-                      );
-                    }
-                    return Container();
-                  },
+                SizedBox(
+                  height: 120,
+                  child: ListView.separated(
+                    itemCount: controller.teaCategories.length,
+                    padding: const EdgeInsets.only(left: 12),
+                    separatorBuilder: (BuildContext context, int index) =>
+                        const SizedBox(width: 20),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return TeaBoxCategoryWidget(
+                          teaTitle: controller.teaCategories[index].title,
+                          teaPhoto: controller.teaCategories[index].imageUrl,
+                          onTap: () async {
+                            BlocProvider.of<TeasBloc>(context).add(
+                                TeasFilterEvent(
+                                    category:
+                                        controller.teaCategories[index].title));
+                            Navigator.pushNamed(
+                              context,
+                              Routes.filteredTeas,
+                            );
+                          });
+                    },
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -181,8 +169,20 @@ class _HomeViewState extends State<HomeView> {
                                           height: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.15),
-                                      const Text('Nenhum chá correspondente!')
+                                              0.10),
+                                      const Column(
+                                        children: [
+                                          Text('Nenhum chá correspondente!'),
+                                          Opacity(
+                                            opacity: 0.4,
+                                            child: Icon(
+                                              Icons
+                                                  .sentiment_dissatisfied_outlined,
+                                              size: 100,
+                                            ),
+                                          )
+                                        ],
+                                      )
                                     ],
                                   )
                                 : ListView.separated(

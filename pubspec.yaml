@@ -38,6 +38,7 @@ dependencies:
   lottie: ^2.7.0
   bloc: ^8.1.4
   flutter_bloc: ^8.1.5
+  get_it: ^7.7.0
 
 dev_dependencies:
   flutter_test:

@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class TeasLocalRepository implements ITeasRepository {
-  final teas = ValueNotifier(<TeaModel>[]);
+  final List<TeaModel> teas = [];
 
   Future<List<TeaModel>> getAllTeas() async {
-    // teas.value.clear();
+
 
     String teaListJson = await rootBundle.loadString('lib/src/mock/teas.json');
 
@@ -17,21 +17,34 @@ class TeasLocalRepository implements ITeasRepository {
 
     for (var res in teaMap['teas']) {
       final tea = TeaModel.fromMap(res);
-      teas.value.add(tea);
+      teas.add(tea);
     }
 
-    return teas.value;
+    return teas;
   }
 
   Future<List<TeaModel>> searchTeas(String filter) async {
     if (filter == '') {
-      return teas.value;
+      return teas;
     }
-    List<TeaModel> outputList = teas.value
+    List<TeaModel> outputList = teas
         .where((tea) => tea.title.toLowerCase().contains(filter.toLowerCase()))
         .toList();
 
     return outputList;
+  }
+
+  Future<List<TeaModel>> teasPerCategory( String category) async {
+    List<TeaModel> listFiteredTeas = [];
+
+   
+
+    for (var tea in teas) {
+      if (tea.categories.contains(category)) {
+        listFiteredTeas.add(tea);
+      }
+    }
+    return listFiteredTeas;
   }
 
   @override
