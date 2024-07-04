@@ -8,18 +8,10 @@ class TeasController {
 
   List<TeaModel> listTeas = [];
 
-  // Future<List<TeaModel>> teasPerCategory(String category) async {
-  //   List<TeaModel> listFiteredTeas = [];
-
-   
-
-  //   for (var tea in listTeas) {
-  //     if (tea.categories.contains(category)) {
-  //       listFiteredTeas.add(tea);
-  //     }
-  //   }
-  //   return listFiteredTeas;
-  // }
+  Future<List<TeaModel>> teasPerCategory(String category) async {
+    
+   return await repository.filterTeas(category);
+  }
 
   final List<TeaCategoriesModel> teaCategories = [
     TeaCategoriesModel(

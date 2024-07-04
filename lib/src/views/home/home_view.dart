@@ -114,13 +114,14 @@ class _HomeViewState extends State<HomeView> {
                           teaTitle: controller.teaCategories[index].title,
                           teaPhoto: controller.teaCategories[index].imageUrl,
                           onTap: () async {
-                            BlocProvider.of<TeasBloc>(context).add(
-                                TeasFilterEvent(
-                                    category:
-                                        controller.teaCategories[index].title));
+                            final teaListFiltered =
+                                await controller.teasPerCategory(
+                                    controller.teaCategories[index].title);
+
                             Navigator.pushNamed(
                               context,
                               Routes.filteredTeas,
+                              arguments: teaListFiltered,
                             );
                           });
                     },

@@ -15,7 +15,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../controller/teas_controller.dart';
 
 class FilteredTeasView extends StatefulWidget {
-const  FilteredTeasView({super.key});
+  const FilteredTeasView({super.key});
 
   @override
   State<FilteredTeasView> createState() => _FilteredTeasViewState();
@@ -26,8 +26,8 @@ class _FilteredTeasViewState extends State<FilteredTeasView> {
 
   @override
   Widget build(BuildContext context) {
-    // final List<TeaModel> teaListFiltered =
-    //     ModalRoute.of(context)?.settings.arguments as List<TeaModel>;
+    final List<TeaModel> teaListFiltered =
+        ModalRoute.of(context)?.settings.arguments as List<TeaModel>;
     final size = MediaQuery.of(context).size;
 
     return SafeArea(
@@ -54,22 +54,15 @@ class _FilteredTeasViewState extends State<FilteredTeasView> {
                 children: [
                   const TeaSearchBarWidget(),
                   const SizedBox(height: 40),
-                  BlocBuilder<TeasBloc, TeasStates>(
-                    builder: (context, state) {
-                      if (state is TeasSuccessStates) {
-                        return Column(
-                          children: List.generate(
-                            state.teaList.length,
-                            (index) => TeaBoxWidget(
-                                title: state.teaList[index].title,
-                                description: state.teaList[index].description,
-                                teaImage: state.teaList[index].imagemUrl),
-                          ),
-                        );
-                      }
-                      return Container();
-                    },
-                  )
+                  Column(
+                    children: List.generate(
+                      teaListFiltered.length,
+                      (index) => TeaBoxWidget(
+                          title: teaListFiltered[index].title,
+                          description: teaListFiltered[index].description,
+                          teaImage: teaListFiltered[index].imagemUrl),
+                    ),
+                  ),
                 ],
               ),
             ),

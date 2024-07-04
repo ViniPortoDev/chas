@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chas/src/utils/hex_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -5,17 +6,14 @@ class TeaBoxWidget extends StatelessWidget {
   final String title;
   final String description;
   final String teaImage;
- 
-
   ValueNotifier<bool> isFavorite;
-
   final void Function()? onTap;
+
   TeaBoxWidget({
     super.key,
     required this.title,
     required this.description,
     required this.teaImage,
-
     this.onTap,
     bool isFav = false,
   }) : isFavorite = ValueNotifier(isFav);
@@ -51,7 +49,6 @@ class TeaBoxWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  // color: Colors.red,
                   height: 90,
                   width: size.width * 0.35,
                   child: Column(
@@ -70,9 +67,9 @@ class TeaBoxWidget extends StatelessWidget {
                       ),
                       const SizedBox(height: 6),
                       Text(
+                        description,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
-                        "  $description",
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 12,
@@ -127,9 +124,22 @@ class TeaBoxWidget extends StatelessWidget {
                     color: Colors.grey,
                   ),
                 ],
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(teaImage),
+              ),
+              child: CachedNetworkImage(
+                imageUrl: teaImage,
+                placeholder: (context, url) => Container(
+                  color: Colors.grey[300],
+                  child: Center(child: CircularProgressIndicator()),
+                ),
+                errorWidget: (context, url, error) => Icon(Icons.error),
+                imageBuilder: (context, imageProvider) => Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: imageProvider,
+                    ),
+                  ),
                 ),
               ),
             ),

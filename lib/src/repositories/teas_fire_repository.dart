@@ -31,4 +31,12 @@ class TeasFireRepository implements ITeasRepository {
     // TODO: implement getTeasTypeThat
     throw UnimplementedError();
   }
+  
+  @override
+  Future<List<TeaModel>> filterTeas(String category) {
+    // TODO: implement filterTeas
+    throw UnimplementedError();
+  }
+  
+  
 }

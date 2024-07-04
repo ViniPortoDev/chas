@@ -41,15 +41,5 @@ class TeasBloc extends Bloc<TeasEvent, TeasStates> {
     });
   }
 
-  // _mapEventToState(TeasEvent event) async {
-  //   List<TeaModel> teaList = [];
-  //   if (event is LoadTeasEvent) {
-  //     teaList = await localRepository.getAllTeas();
-  //   } else if (event is SearchTeasEvent) {
-  //     final searchResults = await localRepository.searchTeas(event.query);
-  //     _outputController.add(TeasSuccessStates(teaList: searchResults));
-  //     teaList = searchResults;
-  //   }
-  //   _outputController.add(TeasSuccessStates(teaList: teaList));
-  // }
+
 }

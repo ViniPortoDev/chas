@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class TeaBoxCategoryWidget extends StatelessWidget {
@@ -29,11 +30,22 @@ class TeaBoxCategoryWidget extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(),
               borderRadius: BorderRadius.circular(12),
-              image: DecorationImage(
-                isAntiAlias: true,
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                  teaPhoto,
+            ),
+            child: CachedNetworkImage(
+              imageUrl: teaPhoto,
+              placeholder: (context, url) => Container(
+                color: Colors.grey[300],
+                child: Center(child: CircularProgressIndicator()),
+              ),
+              errorWidget: (context, url, error) => Icon(Icons.error),
+              imageBuilder: (context, imageProvider) => Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    isAntiAlias: true,
+                    fit: BoxFit.cover,
+                    image: imageProvider,
+                  ),
                 ),
               ),
             ),
@@ -46,7 +58,7 @@ class TeaBoxCategoryWidget extends StatelessWidget {
             fontSize: 12,
             fontWeight: FontWeight.bold,
           ),
-        )
+        ),
       ],
     );
   }
